@@ -1,0 +1,144 @@
+/* Colores Personalizados Basados en la Imagen */
+:root {
+    --utng-dark-blue: #043c7b; /* Navbar principal */
+    --utng-purple: #7c4dff; /* Barra de Procesos */
+    --utng-active-green: #00a896; /* Opción activa */
+    --utng-form-send-btn: #5bc0de; /* Botón Enviar (Turquesa) */
+    --utng-form-clear-btn: #ffc107; /* Botón Limpiar (Amarillo) */
+    --utng-light-gray: #f8f9fa; /* Fondo general */
+}
+
+/* 1. Estilos de la Barra de Navegación Superior */
+.custom-navbar-bg {
+    background-color: var(--utng-dark-blue);
+    padding-top: 5px;
+    padding-bottom: 5px;
+    z-index: 1030; 
+    margin-bottom: 0 !important;
+    border-bottom: none !important; 
+}
+
+.custom-user-icon {
+    color: white; 
+    cursor: pointer;
+}
+
+.custom-main-content {
+    margin-top: 60px; 
+    background-color: var(--utng-light-gray);
+    /* Se asegura que el contenedor principal no tenga padding propio */
+    padding: 0 !important;
+}
+
+/* 2. Estilos de las Barras de Navegación Horizontales */
+
+/* Contenedor púrpura de ancho completo */
+.custom-purple-bar {
+    background-color: var(--utng-purple);
+    /* Padding para dar espacio al texto, manteniendo el 100% de ancho */
+    padding: 0.5rem 1rem; 
+    color: white;
+    /* Asegura que ocupe todo el ancho disponible */
+    width: 100%;
+}
+
+/* ESTILO CLAVE para el texto/botón "PROCESOS" (Simulación de link) */
+.custom-link-dropdown {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    
+    color: white;
+    font-size: 1.25rem; 
+    font-weight: 500;
+    cursor: pointer;
+    text-align: left;
+    
+    display: inline-flex; 
+    align-items: center;
+
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+.custom-link-dropdown:hover,
+.custom-link-dropdown:focus {
+    color: #f0f0f0; 
+    text-decoration: none;
+    background: none;
+}
+
+/* Estilo para la flecha */
+.custom-link-dropdown .bi-chevron-down-fill {
+    font-size: 1rem; 
+}
+
+.custom-dropdown-menu {
+    border-radius: 0;
+    border: none;
+    padding: 0;
+}
+
+/* Contenedor verde de ancho completo (Opción Activa) */
+.active-option-bar {
+    background-color: var(--utng-active-green);
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    /* Padding para dar espacio al texto, manteniendo el 100% de ancho */
+    padding: 0.5rem 1rem;
+    text-align: left; 
+    /* Asegura que ocupe todo el ancho disponible */
+    width: 100%;
+}
+
+
+/* 3. Estilos del Contenido Principal (Formulario y Tabla) */
+
+/* Encabezado de la tabla */
+.custom-table-header th {
+    background-color: var(--utng-dark-blue); 
+    color: white;
+    border-color: #31b0d5; 
+}
+
+/* Estilos para filas seleccionables */
+#justificantesTable tbody tr {
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+#justificantesTable tbody tr.table-info {
+    background-color: #cff4fc !important; 
+}
+
+/* Estilos de los botones del formulario */
+.custom-btn-enviar {
+    background-color: var(--utng-form-send-btn); 
+    border-color: var(--utng-form-send-btn);
+    color: white;
+}
+
+.custom-btn-enviar:hover {
+    background-color: #31b0d5; 
+    border-color: #31b0d5;
+    color: white;
+}
+
+.custom-btn-limpiar {
+    background-color: var(--utng-form-clear-btn);
+    border-color: var(--utng-form-clear-btn);
+    color: black;
+}
+
+.custom-btn-limpiar:hover {
+    background-color: #e0a800; 
+    border-color: #e0a800;
+    color: black;
+}
+
+/* Asegura que las etiquetas del formulario estén alineadas a la derecha */
+.col-form-label.text-end {
+    text-align: right;
+    font-weight: 500;
+}
