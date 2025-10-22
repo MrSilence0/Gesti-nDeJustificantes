@@ -1,1 +1,329 @@
-<p>menu-alumno works!</p>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sistema de Justificantes - Área TI</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .top-bar {
+      background-color: #003366;
+      color: white;
+      padding: 15px;
+    }
+
+    .sidebar {
+      background-color: #f6f6f6;
+      padding: 20px;
+      color: white;
+    }
+
+    .dropdown-menu {
+      background-color: #f8f9fa;
+      width: 100%;
+    }
+
+    .dropdown-item:hover {
+      background-color: #dcdcdc;
+    }
+
+    .profile-btn {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+    }
+
+    .dropdown-toggle-custom {
+      background-color: #9b59b6;
+      color: #ffffff;
+      width: 100%;
+      text-align: left;
+    }
+
+    .dropdown-toggle-custom:focus,
+    .dropdown-toggle-custom:active,
+    .dropdown-toggle-custom:hover,
+    .show > .dropdown-toggle-custom {
+      background-color: #9b59b6 !important;
+      color: white !important;
+      box-shadow: none !important;
+    }
+
+    .dropdown-user .dropdown-toggle {
+      color: white;
+      background: none;
+      border: none;
+      font-size: 1rem;
+    }
+
+    .dropdown-user .dropdown-menu {
+      right: 0;
+      left: auto;
+    }
+
+    .noti-card {
+      width: 300px;
+    }
+
+    .noti-header {
+      background-color: #17a2b8;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+    }
+
+    .noti-header h6 {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .noti-header h1 {
+      margin: 0;
+      font-size: 40px;
+    }
+
+    footer {
+      margin-top: 40px;
+      padding: 20px;
+      background-color: #f0f0f0;
+    }
+
+    .carousel-inner img {
+      height: 250px;
+      object-fit: cover;
+    }
+
+    /* ==== CALENDARIO ESTILO ==== */
+    .calendar-card {
+      background-color: #a61b56;
+      color: white;
+      width: 350px;
+      border-radius: 10px;
+      padding: 15px;
+      margin-top: 30px;
+    }
+
+    .calendar-title {
+      background-color: #13797a;
+      color: white;
+      padding: 10px;
+      margin: -15px -15px 10px -15px;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+
+    .calendar-month {
+      background-color: #1e5fae;
+      padding: 8px;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    .calendar-table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: white;
+      color: black;
+      border-radius: 8px;
+    }
+
+    .calendar-table th {
+      background-color: #f2f2f2;
+      padding: 5px;
+      font-weight: bold;
+    }
+
+    .calendar-table td {
+      width: 14%;
+      padding: 8px 0;
+      text-align: center;
+    }
+
+    .highlight-orange {
+      background-color: #ff9c33;
+      color: white;
+      border-radius: 5px;
+    }
+
+    .highlight-gray {
+      background-color: #c0c0c0;
+      color: white;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Encabezado -->
+  <div class="top-bar d-flex justify-content-between align-items-center">
+    <div class="d-flex align-items-center">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/1/14/LogoUTNG.png" alt="UTNG" height="50">
+      <span class="ms-3 h5 mb-0">SISTEMA DE JUSTIFICANTES - ÁREA TI</span>
+    </div>
+
+    <!-- Usuario con dropdown + botón de perfil -->
+    <div class="d-flex align-items-center">
+      <div class="dropdown dropdown-user">
+        <button class="dropdown-toggle" type="button" id="dropdownUsuario" data-bs-toggle="dropdown" aria-expanded="false">
+          <span id="user-name">Usuario</span>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownUsuario">
+          <li><a class="dropdown-item" href="#">Perfil</a></li>
+          <li><a class="dropdown-item" href="#">Cerrar Sesión</a></li>
+        </ul>
+      </div>
+
+      <button class="profile-btn" onclick="window.location.href='perfil.html'" title="Ir al perfil">
+        <i class="bi bi-person-circle"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="dropdown w-100">
+      <button class="btn dropdown-toggle dropdown-toggle-custom mb-3" type="button" id="dropdownProcesos" data-bs-toggle="dropdown" aria-expanded="false">
+        Procesos
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownProcesos">
+        <li><a class="dropdown-item" href="#">Solicitar un Justificante</a></li>
+        <li><a class="dropdown-item" href="#">Justificantes Solicitados</a></li>
+        <li><a class="dropdown-item" href="#">Cancelar Justificantes</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Sección de notificaciones -->
+  <div class="container mt-4">
+    <div class="card noti-card mx-auto">
+      <div class="noti-header">
+        <h6>NOTIFICACIONES</h6>
+        <h1 id="notification-count">0</h1>
+        <button class="btn btn-light btn-sm mt-2" type="button" data-bs-toggle="collapse" data-bs-target="#notiLista" aria-expanded="false" aria-controls="notiLista">
+          Mostrar
+        </button>
+      </div>
+      <div class="collapse" id="notiLista">
+        <ul class="list-group list-group-flush" id="notiItems">
+          <li class="list-group-item">No tienes nuevas notificaciones</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- === Calendario Escolar === -->
+  <div class="container text-center">
+    <div class="calendar-card mx-auto p-3">
+      <h4 class="calendar-title mb-3">Calendario Escolar</h4>
+      <div class="calendar-month mb-3">Octubre 2025</div>
+
+      <table class="calendar-table mx-auto">
+        <thead>
+          <tr>
+            <th>Dom</th>
+            <th>Lun</th>
+            <th>Mar</th>
+            <th>Mie</th>
+            <th>Jue</th>
+            <th>Vie</th>
+            <th>Sab</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td></td><td></td><td></td><td>1</td><td>2</td><td>3</td><td>4</td>
+          </tr>
+          <tr>
+            <td>5</td><td>6</td><td>7</td>
+            <td class="highlight-orange">8</td>
+            <td class="highlight-orange">9</td>
+            <td class="highlight-orange">10</td>
+            <td>11</td>
+          </tr>
+          <tr>
+            <td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td>
+          </tr>
+          <tr>
+            <td>19</td><td>20</td><td>21</td><td>22</td><td>23</td>
+            <td class="highlight-gray">24</td>
+            <td>25</td>
+          </tr>
+          <tr>
+            <td>26</td><td>27</td><td>28</td><td>29</td><td>30</td><td>31</td><td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Banner de noticias -->
+  <footer>
+    <div class="container">
+      <div id="bannerCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="https://via.placeholder.com/800x250?text=Noticia+1" class="d-block w-100" alt="Noticia 1">
+          </div>
+          <div class="carousel-item">
+            <img src="https://via.placeholder.com/800x250?text=Noticia+2" class="d-block w-100" alt="Noticia 2">
+          </div>
+          <div class="carousel-item">
+            <img src="https://via.placeholder.com/800x250?text=Noticia+3" class="d-block w-100" alt="Noticia 3">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#bannerCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#bannerCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Siguiente</span>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Script para usuario y notificaciones -->
+  <script>
+    const nombreUsuario = "Jose Maria";
+    document.getElementById('user-name').textContent = nombreUsuario;
+
+    const notificaciones = [
+      "Tu justificante fue aprobado.",
+      "Nueva respuesta del departamento.",
+      "Tu solicitud fue enviada correctamente."
+    ];
+
+    const notiItems = document.getElementById('notiItems');
+    const notiCount = document.getElementById('notification-count');
+
+    if (notificaciones.length > 0) {
+      notiCount.textContent = notificaciones.length;
+      notiItems.innerHTML = '';
+
+      notificaciones.forEach(noti => {
+        const li = document.createElement('li');
+        li.className = 'list-group-item';
+        li.textContent = noti;
+        notiItems.appendChild(li);
+      });
+    }
+  </script>
+
+</body>
+</html>
