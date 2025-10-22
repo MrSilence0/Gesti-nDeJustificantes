@@ -41,19 +41,21 @@ body {
     width: auto;
 }
 
-/* Títulos del Sistema */
-.system-title, .system-area {
-    font-weight: 700;
-    color: var(--utng-dark-blue); 
+/* --- Título del Sistema (Barra Azul) --- */
+.system-header-login {
+    background-color: var(--utng-dark-blue);
+    border-radius: 8px;
+    padding: 10px 15px !important;
 }
 
-.system-title {
-    font-size: 2rem; 
+.system-header-login h1, .system-header-login h2 {
+    color: white !important;
+    font-weight: 600;
+    line-height: 1.2;
 }
 
-.system-area {
-    font-size: 1.5rem; 
-    margin-bottom: 2rem !important;
+.system-header-login h2 {
+    font-size: 1.1rem !important;
 }
 
 /* --- CORRECCIÓN CLAVE 2: Contenedor de frases más alto --- */
