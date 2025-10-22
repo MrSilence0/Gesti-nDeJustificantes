@@ -69,22 +69,22 @@
             <div class="row py-4">
                 
                 <div class="col-lg-6 mb-4">
-                    <form id="justificanteForm">
-                        
+                    <form id="justificanteForm" novalidate> 
                         <h5 class="mb-4">Detalles del Justificante</h5>
 
                         <div class="row mb-3 align-items-center">
                             <label for="noControl" class="col-sm-4 col-form-label text-end">No. Control:</label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" id="noControl" readonly>
+                                <input type="text" class="form-control" id="noControl" readonly required> 
                             </div>
                         </div>
 
                         <div class="row mb-3 align-items-center">
                             <label for="cuatrimestre" class="col-sm-4 col-form-label text-end">Cuatrimestre:</label>
                             <div class="col-sm-8">
-                                <select class="form-select" id="cuatrimestre">
-                                    <option selected>ENERO-ABRIL</option>
+                                <select class="form-select" id="cuatrimestre" required>
+                                    <option value="" selected disabled>SELECCIONA UNA OPCIÓN</option>
+                                    <option>ENERO-ABRIL</option>
                                     <option>MAYO-AGOSTO</option>
                                     <option>SEPTIEMBRE-DICIEMBRE</option>
                                 </select>
@@ -94,15 +94,17 @@
                         <div class="row mb-3 align-items-center">
                             <label for="grupo" class="col-sm-4 col-form-label text-end">Grupo:</label>
                             <div class="col-sm-3">
-                                <select class="form-select" id="grupo">
-                                    <option selected>GTI0131</option>
+                                <select class="form-select" id="grupo" required>
+                                    <option value="" selected disabled>SELECCIONA UNA OPCIÓN</option>
+                                    <option>GTI0131</option>
                                     <option>GTI0132</option>
                                 </select>
                             </div>
                             <label for="motivo" class="col-sm-2 col-form-label text-end">Motivo:</label>
                             <div class="col-sm-3">
-                                <select class="form-select" id="motivo">
-                                    <option selected>PERSONAL</option>
+                                <select class="form-select" id="motivo" required>
+                                    <option value="" selected disabled>SELECCIONA UNA OPCIÓN</option>
+                                    <option>PERSONAL</option>
                                     <option>MÉDICO</option>
                                     <option>ACADÉMICO</option>
                                     <option value="OTRO">OTRO</option>
@@ -120,22 +122,23 @@
                         <div class="row mb-3 align-items-center">
                             <label for="fechaSolicitud" class="col-sm-4 col-form-label text-end">Fecha de la Solicitud:</label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" id="fechaSolicitud" value="01/01/2024">
+                                <input type="date" class="form-control" id="fechaSolicitud" required> 
                             </div>
                         </div>
-                        
+
                         <div class="row mb-3 align-items-center">
                             <label for="fechaInasistencia" class="col-sm-4 col-form-label text-end">Fecha de la Inasistencia:</label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" id="fechaInasistencia" value="01/01/2024">
+                                <input type="date" class="form-control" id="fechaInasistencia" required>
                             </div>
                         </div>
 
                         <div class="row mb-3 align-items-center">
                             <label for="diaSemana" class="col-sm-4 col-form-label text-end">Día de la Inasistencia:</label>
                             <div class="col-sm-8">
-                                <select class="form-select" id="diaSemana">
-                                    <option selected>LUNES</option>
+                                <select class="form-select" id="diaSemana" required>
+                                    <option value="" selected disabled>SELECCIONA UNA OPCIÓN</option>
+                                    <option>LUNES</option>
                                     <option>MARTES</option>
                                     <option>MIÉRCOLES</option>
                                     <option>JUEVES</option>
@@ -147,7 +150,7 @@
                         <div class="row mb-3 align-items-center">
                             <label for="tutor" class="col-sm-4 col-form-label text-end">Tutor:</label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" id="tutor">
+                                <input type="text" class="form-control" id="tutor" required>
                             </div>
                         </div>
 
@@ -159,11 +162,10 @@
                             </div>
                         </div>
 
-
                         <div class="row mt-4">
                             <div class="col-12 d-flex justify-content-end">
                                 <button type="submit" class="btn custom-btn-enviar me-2">Enviar</button>
-                                <button type="reset" class="btn custom-btn-limpiar">Limpiar</button>
+                                <button type="button" id="limpiarFormBtn" class="btn custom-btn-limpiar">Limpiar</button> 
                             </div>
                         </div>
                     </form>
@@ -182,29 +184,27 @@
                                             <th scope="col">Justificante No.</th>
                                             <th scope="col">Cuatrimestre</th>
                                             <th scope="col">Grupo</th>
-                                            <th scope="col" class="text-center">
-                                                <button class="btn custom-btn-enviar btn-sm">Obtener datos</button>
-                                            </th>
+                                            <th></th> 
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr data-justificante="2024-001" data-control="123456" data-cuatrimestre="ENERO-ABRIL" data-grupo="GTI0131" data-motivo="PERSONAL" data-fecha-solicitud="01/01/2024" data-fecha-inasistencia="01/01/2024" data-dia="LUNES" data-tutor="Prof. García">
+                                        <tr data-justificante="2024-001" data-control="123456" data-cuatrimestre="ENERO-ABRIL" data-grupo="GTI0131" data-motivo="PERSONAL" data-fecha-solicitud="2024-03-10" data-fecha-inasistencia="2024-03-11" data-dia="LUNES" data-tutor="Prof. García">
                                             <td>2024-001</td>
                                             <td>ENERO-ABRIL</td>
                                             <td>GTI0131</td>
-                                            <td></td>
+                                            <td><button class="btn custom-btn-enviar btn-sm obtener-datos">Obtener datos</button></td>
                                         </tr>
-                                        <tr data-justificante="2024-002" data-control="789012" data-cuatrimestre="ENERO-ABRIL" data-grupo="GTI0132" data-motivo="MÉDICO" data-fecha-solicitud="01/01/2024" data-fecha-inasistencia="01/01/2024" data-dia="MARTES" data-tutor="Prof. López">
+                                        <tr data-justificante="2024-002" data-control="789012" data-cuatrimestre="ENERO-ABRIL" data-grupo="GTI0132" data-motivo="MÉDICO" data-fecha-solicitud="2024-03-15" data-fecha-inasistencia="2024-03-16" data-dia="MARTES" data-tutor="Prof. López">
                                             <td>2024-002</td>
                                             <td>ENERO-ABRIL</td>
                                             <td>GTI0132</td>
-                                            <td></td>
+                                            <td><button class="btn custom-btn-enviar btn-sm obtener-datos">Obtener datos</button></td>
                                         </tr>
-                                        <tr data-justificante="2024-003" data-control="345678" data-cuatrimestre="ENERO-ABRIL" data-grupo="GTI0131" data-motivo="OTRO" data-otro-motivo="Viaje de estudios" data-fecha-solicitud="01/01/2024" data-fecha-inasistencia="01/01/2024" data-dia="LUNES" data-tutor="Prof. Pérez">
+                                        <tr data-justificante="2024-003" data-control="345678" data-cuatrimestre="ENERO-ABRIL" data-grupo="GTI0131" data-motivo="OTRO" data-otro-motivo="Viaje de estudios" data-fecha-solicitud="2024-03-20" data-fecha-inasistencia="2024-03-21" data-dia="LUNES" data-tutor="Prof. Pérez">
                                             <td>2024-003</td>
                                             <td>ENERO-ABRIL</td>
                                             <td>GTI0131</td>
-                                            <td></td>
+                                            <td><button class="btn custom-btn-enviar btn-sm obtener-datos">Obtener datos</button></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -219,14 +219,43 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
+    <div class="modal fade" id="statusModal" tabindex="-1" aria-labelledby="statusModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="statusModalLabel">Estado de la Solicitud</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body" id="statusModalBody">
+            </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const motivoSelect = document.getElementById('motivo');
             const otroMotivoRow = document.getElementById('otroMotivoRow');
             const justificantesTable = document.getElementById('justificantesTable');
             const form = document.getElementById('justificanteForm');
+            const limpiarFormBtn = document.getElementById('limpiarFormBtn');
+            const statusModal = new bootstrap.Modal(document.getElementById('statusModal'));
+            const statusModalBody = document.getElementById('statusModalBody');
+            
+            // **Nuevas referencias de campos**
+            const noControlField = document.getElementById('noControl');
+            const documentoField = document.getElementById('documento');
 
-            // 1. Mostrar/Ocultar el campo "Especificar Otro Motivo"
+            // Función para mostrar el modal de estado
+            function showStatusModal(message, isSuccess = true) {
+                statusModalBody.innerHTML = message;
+                statusModal.show();
+            }
+
+            // 1. Mostrar/Ocultar el campo "Especificar Otro Motivo" (Lógica mantenida)
             motivoSelect.addEventListener('change', function() {
                 if (this.value === 'OTRO') {
                     otroMotivoRow.style.display = 'flex'; 
@@ -234,16 +263,22 @@
                     otroMotivoRow.style.display = 'none';
                     document.getElementById('otroMotivo').value = ''; 
                 }
+                this.classList.toggle('is-invalid', this.value === "");
             });
 
-            // 2. Cargar datos del formulario al hacer clic en la tabla
+            // 2. Cargar datos del formulario al hacer clic en la tabla (Lógica mantenida)
             justificantesTable.addEventListener('click', function(e) {
-                let row = e.target.closest('tr');
+                let targetBtn = e.target.closest('.obtener-datos');
+                if (!targetBtn) return; 
+
+                let row = targetBtn.closest('tr');
                 if (row && row.parentNode.tagName === 'TBODY') {
+                    
                     justificantesTable.querySelectorAll('tbody tr').forEach(r => r.classList.remove('table-info'));
                     row.classList.add('table-info');
-
-                    document.getElementById('noControl').value = row.dataset.control || '';
+                    
+                    // Carga de datos, incluyendo las fechas en formato YYYY-MM-DD
+                    noControlField.value = row.dataset.control || ''; // Usa la referencia
                     document.getElementById('cuatrimestre').value = row.dataset.cuatrimestre || '';
                     document.getElementById('grupo').value = row.dataset.grupo || '';
                     document.getElementById('motivo').value = row.dataset.motivo || '';
@@ -260,15 +295,101 @@
                         otroMotivoRow.style.display = 'none';
                         document.getElementById('otroMotivo').value = '';
                     }
+
+                    // Limpia cualquier marca de validación previa
+                    form.querySelectorAll('.form-control, .form-select').forEach(el => {
+                        el.classList.remove('is-invalid');
+                    });
                 }
             });
             
-            // 3. Limpiar formulario (reset)
-            form.addEventListener('reset', function() {
+            // 3. Lógica del botón Limpiar (Lógica mantenida)
+            limpiarFormBtn.addEventListener('click', function() {
+                form.reset();
+                
+                document.getElementById('fechaSolicitud').value = '';
+                document.getElementById('fechaInasistencia').value = '';
+
                 setTimeout(() => {
                     otroMotivoRow.style.display = 'none';
                     justificantesTable.querySelectorAll('tbody tr').forEach(r => r.classList.remove('table-info'));
+                    
+                    form.querySelectorAll('.form-control, .form-select').forEach(el => {
+                        el.classList.remove('is-invalid');
+                    });
                 }, 10); 
+            });
+
+            // 4. Lógica del botón Enviar/Validación (CORREGIDA)
+            form.addEventListener('submit', function(e) {
+                e.preventDefault(); // Evita el envío por defecto
+                
+                let isFormValid = true;
+                const requiredFields = form.querySelectorAll('[required]');
+                let emptyFieldsCount = 0;
+                let warningMessage = ''; // Para el documento opcional
+
+                // === A) VERIFICACIÓN DE CAMPO NO. CONTROL (CRÍTICO) ===
+                // El campo es 'required' y 'readonly', su valor solo debe existir si se seleccionó una fila.
+                if (noControlField.value.trim() === '') {
+                    noControlField.classList.add('is-invalid');
+                    emptyFieldsCount++;
+                    isFormValid = false;
+                } else {
+                    noControlField.classList.remove('is-invalid');
+                }
+
+                // === B) VALIDACIÓN DE OTROS CAMPOS REQUIRED ===
+                requiredFields.forEach(field => {
+                    // Si ya validamos noControl, lo saltamos aquí
+                    if (field.id === 'noControl') return; 
+
+                    let value = field.value.trim();
+                    let isInvalid = false;
+                    
+                    // Comprobar si está vacío (incluye select con opción disabled, marcado por value="")
+                    if (value === '' || value === field.getAttribute('selected')) {
+                        isInvalid = true;
+                        emptyFieldsCount++;
+                    } else if (field.id === 'motivo' && field.value === 'OTRO' && document.getElementById('otroMotivo').value.trim() === '') {
+                         // Validación especial para "Especificar Otro" cuando el motivo es OTRO
+                         isInvalid = true;
+                         emptyFieldsCount++;
+                    }
+                    
+                    // Marcar/desmarcar como inválido
+                    field.classList.toggle('is-invalid', isInvalid);
+
+                    if (isInvalid) {
+                        isFormValid = false;
+                    }
+                });
+                
+                // === C) VERIFICACIÓN DE DOCUMENTO (ADVERTENCIA - No detiene el envío) ===
+                // Si el campo de archivo no tiene archivos seleccionados
+                if (documentoField.files.length === 0) {
+                    warningMessage += '<p class="text-warning mb-0"><i class="bi bi-exclamation-triangle-fill me-2"></i> **Advertencia:** No se subió ningún documento. El justificante puede no ser válido.</p>';
+                    documentoField.classList.remove('is-invalid'); // No es un error de validación, sino una advertencia
+                }
+                
+                // === RESULTADO FINAL ===
+                if (isFormValid) {
+                    let successMessage = '<i class="bi bi-check-circle-fill text-success fs-4 me-2"></i> Datos del justificante actualizados con éxito.';
+                    
+                    if (warningMessage) {
+                         // Si hay advertencia, la añadimos al mensaje de éxito
+                         successMessage += warningMessage;
+                         showStatusModal(successMessage, true); 
+                    } else {
+                         // Solo mensaje de éxito
+                         showStatusModal(successMessage, true);
+                    }
+                    
+                    // Aquí iría el código para enviar los datos al servidor (AJAX/Fetch)
+                } else {
+                    // Si hay campos requeridos vacíos (incluyendo No. Control)
+                    showStatusModal(`<i class="bi bi-x-circle-fill text-danger fs-4 me-2"></i> Por favor, revisa y llena los ${emptyFieldsCount} campos marcados en rojo.`, false);
+                }
             });
         });
     </script>
