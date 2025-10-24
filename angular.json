@@ -25,11 +25,8 @@
               }
             ],
             "styles": [
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "src/app/componentes/alumno/solicitar-justificante/solicitar-justificante.css"
-            ],
-            "scripts": [
-              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+  "node_modules/bootstrap/dist/css/bootstrap.min.css",
+  "src/styles.css"
             ]
           },
           "configurations": {

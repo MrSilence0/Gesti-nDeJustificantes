@@ -1,0 +1,163 @@
+/* Colores Personalizados Basados en la Imagen */
+:root {
+    --utng-dark-blue: #043c7b; /* Navbar principal */
+    --utng-purple: #7c4dff; /* Barra de Procesos */
+    --utng-active-green: #00a896; /* Opción activa - Verde/Teal (Añadido) */
+    --utng-actualizar-btn: #4CAF50; /* Botón Actualizar (Verde) */
+    --utng-download-btn: #17a2b8; /* Botón Descargar (Cian/Info) */
+    --utng-light-gray: #f8f9fa; /* Fondo general */
+    --utng-error-red: #dc3545; /* Rojo de error */
+}
+
+/* 1. Estilos de la Barra de Navegación Superior */
+body {
+    background-color: var(--utng-light-gray);
+}
+.custom-navbar-bg {
+    background-color: var(--utng-dark-blue);
+    padding-top: 5px;
+    padding-bottom: 5px;
+    z-index: 1030; 
+}
+
+.custom-user-icon {
+    color: white; 
+    cursor: pointer;
+}
+
+/* Nota: custom-main-content fue reemplazado por custom-main-content-home en el nuevo HTML para un layout de pantalla completa */
+.custom-main-content {
+    margin-top: 60px; 
+    background-color: var(--utng-light-gray);
+    padding: 0 !important;
+}
+
+/* 2. Estilos de las Barras de Navegación Horizontales */
+.custom-purple-bar {
+    background-color: var(--utng-purple);
+    padding: 0.5rem 1rem; 
+    color: white;
+    width: 100%;
+}
+
+.custom-link-dropdown {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    color: white;
+    font-size: 1.25rem; 
+    font-weight: 500;
+    cursor: pointer;
+    text-align: left;
+    display: inline-flex; 
+    align-items: center;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+.active-option-bar {
+    background-color: var(--utng-active-green);
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    text-align: left; 
+    width: 100%;
+}
+
+
+/* 3. Estilos del Contenido Principal (Formulario y Tabla) */
+
+.col-form-label.text-end {
+    text-align: right;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+/* Estilo para los inputs de solo lectura */
+#noJustificante {
+    background-color: #f1f1f1;
+    cursor: not-allowed;
+}
+
+/* NUEVO: Estilo para el textarea de comentarios */
+#comentarioRechazo {
+    resize: vertical;
+}
+/* Estilo para marcar el textarea como inválido */
+#comentarioRechazo.is-invalid {
+    border-color: var(--utng-error-red) !important;
+    box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25) !important;
+}
+
+
+/* Encabezado de la tabla */
+.custom-table-header th {
+    background-color: var(--utng-dark-blue); 
+    color: white;
+    border-color: var(--utng-dark-blue); 
+    white-space: nowrap;
+}
+
+/* Estilos para filas seleccionables */
+#justificantesTable tbody tr {
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+/* Fila seleccionada */
+#justificantesTable tbody tr.table-primary {
+    background-color: #cfe2ff !important; 
+}
+
+/* Estilos del botón 'Actualizar' (Verde) */
+.custom-btn-actualizar {
+    background-color: var(--utng-actualizar-btn); 
+    border-color: var(--utng-actualizar-btn);
+    color: white;
+    font-weight: 600;
+}
+
+.custom-btn-actualizar:hover {
+    background-color: #43a047; 
+    border-color: #43a047;
+    color: white;
+}
+
+/* NUEVO: Estilos del botón 'Descargar' */
+.custom-btn-download {
+    background-color: var(--utng-download-btn); 
+    border-color: var(--utng-download-btn);
+    color: white;
+    font-weight: 500;
+    font-size: 0.85rem;
+    padding: 0.25rem 0.5rem;
+}
+
+.custom-btn-download:hover {
+    background-color: #138496; 
+    border-color: #138496;
+    color: white;
+}
+
+/* Badge de estado del tutor */
+.badge {
+    font-size: 0.85em;
+    font-weight: 600;
+}
+
+/* Estilos para el modal */
+.custom-modal-header {
+    background-color: var(--utng-dark-blue);
+    color: white;
+}
+
+.custom-modal-header .btn-close {
+    filter: invert(1);
+}
+
+.custom-btn-cerrar {
+    background-color: #6c757d;
+    border-color: #6c757d;
+    color: white;
+}

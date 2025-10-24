@@ -1,0 +1,169 @@
+/* Colores Personalizados Basados en la Imagen */
+:root {
+    --utng-dark-blue: #043c7b; /* Navbar principal */
+    --utng-purple: #7c4dff; /* Barra de Procesos */
+    --utng-active-green: #00a896; /* Opción activa - Verde/Teal */
+    --utng-actualizar-btn: #4CAF50; /* Botón Actualizar (Verde) */
+    --utng-search-btn: #17a2b8; /* Botón Buscar (Cian/Info) */
+    --utng-email-btn: #5bc0de; /* Botón Enviar Correo (Azul claro/Info) */
+    --utng-light-gray: #f8f9fa; /* Fondo general */
+    --utng-error-red: #dc3545; /* Rojo de error */
+}
+
+/* 1. Estilos de la Barra de Navegación Superior */
+body {
+    background-color: var(--utng-light-gray);
+}
+.custom-navbar-bg {
+    background-color: var(--utng-dark-blue);
+    padding-top: 5px;
+    padding-bottom: 5px;
+    z-index: 1030; 
+}
+
+.custom-user-icon {
+    color: white; 
+    cursor: pointer;
+}
+
+.custom-main-content {
+    margin-top: 60px; 
+    background-color: var(--utng-light-gray);
+    padding: 0 !important;
+}
+
+/* 2. Estilos de las Barras de Navegación Horizontales */
+.custom-purple-bar {
+    background-color: var(--utng-purple);
+    padding: 0.5rem 1rem; 
+    color: white;
+    width: 100%;
+}
+
+.custom-link-dropdown {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    color: white;
+    font-size: 1.25rem; 
+    font-weight: 500;
+    cursor: pointer;
+    text-align: left;
+    display: inline-flex; 
+    align-items: center;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+.active-option-bar {
+    background-color: var(--utng-active-green);
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    text-align: left; 
+    width: 100%;
+}
+
+
+/* 3. Estilos del Contenido Principal (Formulario y Tabla) */
+
+.col-form-label.text-end {
+    text-align: right;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+/* Estilo para los inputs de solo lectura */
+#noEmpleado, #tutorName {
+    background-color: #f1f1f1;
+    cursor: not-allowed;
+}
+
+/* Encabezado de la tabla */
+.custom-table-header th {
+    background-color: var(--utng-dark-blue); 
+    color: white;
+    border-color: var(--utng-dark-blue); 
+    white-space: nowrap;
+}
+
+/* Estilos para filas seleccionables */
+#tutorTable tbody tr {
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+/* Fila seleccionada */
+#tutorTable tbody tr.table-primary {
+    background-color: #cfe2ff !important; 
+}
+
+/* Estilos de Botones */
+.custom-btn-actualizar {
+    background-color: var(--utng-actualizar-btn); 
+    border-color: var(--utng-actualizar-btn);
+    color: white;
+    font-weight: 600;
+}
+
+.custom-btn-actualizar:hover {
+    background-color: #43a047; 
+    border-color: #43a047;
+    color: white;
+}
+
+.custom-btn-actualizar:disabled {
+    background-color: #a5d6a7;
+    border-color: #a5d6a7;
+}
+
+.custom-btn-search {
+    background-color: var(--utng-search-btn); 
+    border-color: var(--utng-search-btn);
+    color: white;
+    font-weight: 500;
+}
+
+.custom-btn-search:hover {
+    background-color: #138496; 
+    border-color: #138496;
+    color: white;
+}
+
+.custom-btn-enviar-correo {
+    background-color: var(--utng-email-btn); 
+    border-color: var(--utng-email-btn);
+    color: white;
+    font-weight: 500;
+}
+
+.custom-btn-enviar-correo:hover {
+    background-color: #46b8da; 
+    border-color: #46b8da;
+    color: white;
+}
+
+.custom-btn-enviar-correo:disabled {
+    background-color: #bbdefb;
+    border-color: #bbdefb;
+}
+
+/* Badge de estado del tutor */
+.badge {
+    font-size: 0.85em;
+    font-weight: 600;
+}
+.badge.bg-success {
+    background-color: #28a745 !important;
+}
+.badge.bg-danger {
+    background-color: #dc3545 !important;
+}
+
+/* Estilo para el botón de cerrar modal */
+.custom-btn-cerrar {
+    background-color: #6c757d;
+    border-color: #6c757d;
+    color: white;
+}

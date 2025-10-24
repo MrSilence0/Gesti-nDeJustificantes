@@ -1,0 +1,122 @@
+
+/* Colores principales */
+:root {
+    --utng-dark-blue: #043c7b; /* Azul del header del sistema */
+    --utng-teal: #3ABFBC; /* Teal/Aqua para los botones de acción */
+    --utng-error-red: #dc3545; /* Rojo de Bootstrap para errores */
+    --custom-text-color: #343a40; 
+}
+
+/* Estilos de la página de registro */
+body {
+    background-color: white; /* Fondo blanco solicitado */
+    font-family: 'Arial', sans-serif;
+}
+
+/* Tarjeta Principal */
+.custom-card-registro {
+    width: 100%;
+    max-width: 500px; /* Tamaño apropiado para el formulario */
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    background-color: white;
+}
+
+/* Logo de la Universidad */
+.logo-container {
+    height: auto; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Ajusta el tamaño del logo para que se vea como en la referencia de registro */
+}
+
+/* Estilo para la imagen de logo completa */
+.custom-logo-full {
+    max-height: 80px; 
+    width: auto;
+}
+
+/* --- Título del Sistema (Barra Azul) --- */
+.system-header-login {
+    background-color: var(--utng-dark-blue);
+    border-radius: 8px;
+    padding: 10px 15px !important;
+}
+
+.system-header-login h1, .system-header-login h2 {
+    color: white !important;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.system-header-login h2 {
+    font-size: 1.1rem !important;
+}
+
+/* --- Campos de Formulario (Inputs) --- */
+.custom-input {
+    /* Estilo por defecto: borde delgado similar al teal/gris claro */
+    border-color: #ced4da; /* Gris por defecto */
+    border-width: 1px;
+    height: 50px;
+    font-size: 1.1rem;
+    padding: 10px 15px;
+    border-radius: 8px;
+    box-shadow: none !important;
+}
+
+.custom-input:focus {
+    /* Borde en color teal al enfocar, como el estilo original */
+    border-color: var(--utng-teal);
+    box-shadow: 0 0 0 0.25rem rgba(58, 191, 188, 0.25) !important; 
+}
+
+/* --- Estilos de Validación de Error --- */
+/* Estilo del borde rojo para campos inválidos */
+.custom-input.is-invalid {
+    border-color: var(--utng-error-red) !important;
+    padding-right: calc(1.5em + 0.75rem); /* Espacio para el ícono de error de Bootstrap */
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3cpath stroke-linecap='round' d='M6 8.25h.01'/%3e%3c/svg%3e") !important;
+    background-repeat: no-repeat !important;
+    background-position: right calc(0.375em + 0.1875rem) center !important;
+    background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem) !important;
+}
+
+/* Estilo para el mensaje de error superior (Modal-like appearance) */
+.error-modal-style {
+    color: var(--utng-error-red);
+    background-color: #f8d7da; /* Fondo rojo muy claro */
+    border-color: #f5c6cb;
+    text-align: left;
+    font-weight: 600;
+    border-radius: 8px;
+    /* Ajustes para el ícono de exclamación */
+}
+
+/* --- Botón Registrarme --- */
+.custom-btn-register {
+    font-size: 1.25rem;
+    padding: 10px 0;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background-color 0.2s;
+    background-color: var(--utng-teal); /* Color teal para el botón de acción */
+    color: white;
+}
+
+.custom-btn-register:hover {
+    background-color: #30a09e; 
+    color: white;
+}
+
+/* Enlaces de pie de página */
+.text-center a {
+    color: var(--utng-dark-blue);
+    font-weight: 500;
+}
+
+.text-center a:hover {
+    color: var(--utng-teal);
+}
