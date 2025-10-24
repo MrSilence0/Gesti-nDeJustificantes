@@ -83,11 +83,20 @@
               }
             ],
             "styles": [
-              "src/styles.css"
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/app/componentes/alumno/solicitar-justificante/solicitar-justificante.css"
+              
+            ],
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
             ]
           }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "57024026-9a69-497b-8ede-5442d8672a8e"
   }
 }
+
