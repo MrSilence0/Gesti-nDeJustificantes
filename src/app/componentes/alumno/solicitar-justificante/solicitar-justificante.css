@@ -1,6 +1,3 @@
-/* ===========================
-   VARIABLES DE COLOR
-=========================== */
 :root {
     --utng-dark-blue: #043c7b;
     --utng-purple: #7c4dff;
@@ -8,17 +5,12 @@
     --utng-light-gray: #f8f9fa;
 }
 
-/* ===========================
-   ESTILOS GENERALES
-=========================== */
 body {
     background-color: var(--utng-light-gray);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-top: 15px; 
 }
 
-/* ===========================
-   NAVBAR SUPERIOR
-=========================== */
 .custom-navbar-bg {
     background-color: var(--utng-dark-blue) !important;
     padding-top: 5px;
@@ -31,9 +23,6 @@ body {
     cursor: pointer;
 }
 
-/* ===========================
-   BARRA DE PROCESOS
-=========================== */
 .custom-purple-bar {
     background-color: var(--utng-purple) !important;
     padding: 0.5rem 1rem;
@@ -52,9 +41,6 @@ body {
     box-shadow: none;
 }
 
-/* ===========================
-   BARRA DE ACCIÓN ACTIVA
-=========================== */
 .active-option-bar {
     background-color: var(--utng-active-green) !important;
     color: white;
@@ -64,17 +50,11 @@ body {
     margin-bottom: 1rem;
 }
 
-/* ===========================
-   TARJETAS
-=========================== */
 .card {
     border-radius: 0.5rem;
     box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.075);
 }
 
-/* ===========================
-   TABLA
-=========================== */
 .custom-table-header th {
     background-color: var(--utng-dark-blue) !important;
     color: white;
@@ -85,9 +65,6 @@ body {
     background-color: #cfe2ff !important;
 }
 
-/* ===========================
-   BOTONES
-=========================== */
 .custom-btn-actualizar {
     background-color: #4CAF50;
     border-color: #4CAF50;
@@ -99,9 +76,6 @@ body {
     border-color: #43a047;
 }
 
-/* ===========================
-   MODAL
-=========================== */
 .modal-header.bg-danger {
     background-color: #dc3545 !important;
     color: white;
@@ -111,11 +85,6 @@ body {
     filter: invert(1);
 }
 
-/* ===========================
-   NUEVOS ESTILOS ADICIONALES
-=========================== */
-
-/* Botón Seleccionar Archivo */
 .btn-select-file {
     background-color: var(--utng-dark-blue);
     color: white;
@@ -125,7 +94,6 @@ body {
     background-color: #5da3ed;
 }
 
-/* Botones Limpiar y Enviar */
 .btn-clean {
     background-color: #00a896;
     color: white;
@@ -136,7 +104,7 @@ body {
 }
 
 .btn-submit {
-    background: linear-gradient(to right, var(--utng-dark-blue), var(--utng-purple));
+    background: linear-gradient(to right, var(--utng-dark-blue), var(--utng-dark-blue));
     color: white;
     font-weight: 600;
 }
@@ -144,7 +112,6 @@ body {
     opacity: 0.9;
 }
 
-/* Etiquetas antes de inputs: poner en negrita */
 .form-label {
     font-weight: bold;
     color: #212529;

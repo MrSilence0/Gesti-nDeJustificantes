@@ -11,45 +11,51 @@
 </head>
 <body>
 
-    <!-- NAVBAR SUPERIOR -->
     <nav class="navbar navbar-expand-lg navbar-dark custom-navbar-bg fixed-top">
         <div class="container-fluid">
             <a class="navbar-brand me-4" href="#">
-                <img src="Universidad_Tecnológica_del_Norte_de_Guanajuato_(UTNG).png" alt="Logo Universidad" height="50">
+                <img src="/src/app/componentes/images/LogoUtng.png" alt="Logo Universidad" height="50">
             </a>
             <div class="d-flex flex-column text-white">
                 <h1 class="fs-4 mb-0">SISTEMA DE JUSTIFICANTES</h1>
                 <h2 class="fs-5 mb-0">- ÁREA TI</h2>
             </div>
             <div class="ms-auto d-flex align-items-center">
-                <span class="text-white me-2" id="userName">Estudiante01</span>
-                <i class="bi bi-person-circle fs-2 custom-user-icon"></i>
+                <div class="dropdown">
+                    <span class="text-white me-2">User Name</span>
+                    
+                    <button class="btn dropdown-toggle p-0" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="userDropdown">
+                        <i class="bi bi-person-circle fs-2 custom-user-icon"></i>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                        <li><a class="dropdown-item" href="/src/app/componentes/perfil/vista-general/vista-general.html">Perfil</a></li>
+                        <li><a class="dropdown-item" href="/src/app/componentes/inicio-sesion/inicio-sesion.html">Cerrar Sesión</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </nav>
 
-    <!-- BARRA DE PROCESOS (MISMA QUE CANCELAR-JUSTIFICANTE) -->
     <div class="custom-purple-bar mt-5">
         <div class="dropdown">
             <button class="custom-link-dropdown dropdown-toggle" type="button" data-bs-toggle="dropdown">
                 <i class="bi bi-chevron-down-fill me-2"></i> Procesos
             </button>
             <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Solicitar Justificante</a></li>
-                <li><a class="dropdown-item" href="#">Actualizar Datos Justificante</a></li>
-                <li><a class="dropdown-item" href="#">Cancelar Justificante</a></li>
-                <li><a class="dropdown-item" href="#">Ver Justificantes Solicitados</a></li>
+                <li><a class="dropdown-item" href="/src/app/componentes/home/home.html">Menú</a></li>
+                <li><a class="dropdown-item" href="#">Proceso 1</a></li>
+                <li><a class="dropdown-item" href="#">Proceso 2</a></li>
+                <li><a class="dropdown-item" href="#">Proceso 3</a></li>
+                <li><a class="dropdown-item" href="#">Proceso 4</a></li>
                 <li><a class="dropdown-item active" href="#">Actualizar Contraseña</a></li>
             </ul>
         </div>
     </div>
 
-    <!-- BARRA DE ACCIÓN ACTIVA -->
     <div class="active-option-bar">
         Actualizar Contraseña
     </div>
 
-    <!-- CONTENIDO PRINCIPAL -->
     <div class="container py-5">
         <div class="row justify-content-center">
             <div class="col-lg-5">
@@ -76,7 +82,6 @@
         </div>
     </div>
 
-    <!-- MODAL DE CONFIRMACIÓN -->
     <div class="modal fade" id="passwordUpdatedModal" tabindex="-1" aria-labelledby="passwordUpdatedModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
@@ -95,7 +100,6 @@
         </div>
     </div>
 
-    <!-- SCRIPTS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         document.getElementById('updatePasswordForm').addEventListener('submit', function(e) {
@@ -115,11 +119,10 @@
                 return;
             }
 
-            // Simulación de actualización exitosa
             const modal = new bootstrap.Modal(document.getElementById('passwordUpdatedModal'));
             modal.show();
 
-            // Reiniciar formulario
+
             this.reset();
         });
     </script>

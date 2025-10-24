@@ -31,8 +31,8 @@
                         <i class="bi bi-person-circle fs-2 custom-user-icon"></i>
                     </button>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
-                        <li><a class="dropdown-item" href="link_modificar_perfil.html">Perfil</a></li>
-                        <li><a class="dropdown-item" href="#">Cerrar Sesión</a></li>
+                        <li><a class="dropdown-item" href="/src/app/componentes/perfil/vista-general/vista-general.html">Perfil</a></li>
+                        <li><a class="dropdown-item" href="/src/app/componentes/inicio-sesion/inicio-sesion.html">Cerrar Sesión</a></li>
                     </ul>
                 </div>
             </div>
@@ -49,11 +49,11 @@
                     </button>
                     
                     <ul class="dropdown-menu custom-dropdown-menu" aria-labelledby="procesosDropdown">
-                        <li><a class="dropdown-item" href=".html">Menú</a></li>
-                        <li><a class="dropdown-item" href="solicitar_justificante.html">Solicitar Justificante</a></li>
-                        <li><a class="dropdown-item" href="actualizar_justificante.html">Actualizar Datos Justificante</a></li>
-                        <li><a class="dropdown-item" href="cancelar_justificante.html">Cancelar Justificante</a></li>
-                        <li><a class="dropdown-item" href="ver_justificantes.html">Ver Justificantes Solicitados</a></li>
+                        <li><a class="dropdown-item" href="/src/app/componentes/alumno/menu-alumno/menu-alumno.html">Menú</a></li>
+                        <li><a class="dropdown-item" href="/src/app/componentes/alumno/solicitar-justificante/solicitar-justificante.html">Solicitar Justificante</a></li>
+                        <li><a class="dropdown-item" href="/src/app/componentes/alumno/actualizar-justificante/actualizar-justificante.html">Actualizar Datos Justificante</a></li>
+                        <li><a class="dropdown-item" href="/src/app/componentes/alumno/cancelar-justificantes/cancelar-justificantes.html">Cancelar Justificante</a></li>
+                        <li><a class="dropdown-item" href="/src/app/componentes/alumno/ver-justificantes/ver-justificantes.html">Ver Justificantes Solicitados</a></li>
                     </ul>
                 </div>
             </div>
@@ -61,7 +61,7 @@
 
         <div class="row g-0">
             <div class="col-12 active-option-bar">
-                Solicitar Justificante - Actualizar datos
+                Actualizar datos
             </div>
         </div>
         
@@ -330,7 +330,6 @@
                 let warningMessage = ''; // Para el documento opcional
 
                 // === A) VERIFICACIÓN DE CAMPO NO. CONTROL (CRÍTICO) ===
-                // El campo es 'required' y 'readonly', su valor solo debe existir si se seleccionó una fila.
                 if (noControlField.value.trim() === '') {
                     noControlField.classList.add('is-invalid');
                     emptyFieldsCount++;

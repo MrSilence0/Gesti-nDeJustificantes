@@ -7,9 +7,9 @@
 
 body {
     background-color: var(--utng-light-gray);
+    padding-top: 10px; 
 }
 
-/* Navbar superior */
 .custom-navbar-bg {
     background-color: var(--utng-dark-blue);
     padding-top: 5px;
@@ -21,7 +21,6 @@ body {
     cursor: pointer;
 }
 
-/* Barra de procesos */
 .custom-purple-bar {
     background-color: var(--utng-purple);
     padding: 0.5rem 1rem;
@@ -36,7 +35,6 @@ body {
     font-weight: 500;
 }
 
-/* Barra de acción activa */
 .active-option-bar {
     background-color: var(--utng-active-green);
     color: white;
@@ -45,12 +43,10 @@ body {
     padding: 0.5rem 1rem;
 }
 
-/* Tarjetas */
 .card {
     border-radius: 0.5rem;
 }
 
-/* Tabla */
 .custom-table-header th {
     background-color: var(--utng-dark-blue);
     color: white;
@@ -60,7 +56,6 @@ body {
     background-color: #cfe2ff !important;
 }
 
-/* Botones */
 .custom-btn-actualizar {
     background-color: #4CAF50;
     border-color: #4CAF50;
@@ -72,7 +67,6 @@ body {
     border-color: #43a047;
 }
 
-/* Modal */
 .modal-header.bg-danger {
     background-color: #dc3545 !important;
     color: white;
