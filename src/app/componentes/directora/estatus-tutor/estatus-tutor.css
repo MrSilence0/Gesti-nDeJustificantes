@@ -1,4 +1,3 @@
-/* Colores Personalizados Basados en la Imagen */
 :root {
     --utng-dark-blue: #043c7b; /* Navbar principal */
     --utng-purple: #7c4dff; /* Barra de Procesos */
@@ -10,7 +9,6 @@
     --utng-error-red: #dc3545; /* Rojo de error */
 }
 
-/* 1. Estilos de la Barra de Navegación Superior */
 body {
     background-color: var(--utng-light-gray);
 }
@@ -32,7 +30,6 @@ body {
     padding: 0 !important;
 }
 
-/* 2. Estilos de las Barras de Navegación Horizontales */
 .custom-purple-bar {
     background-color: var(--utng-purple);
     padding: 0.5rem 1rem; 
@@ -66,22 +63,17 @@ body {
     width: 100%;
 }
 
-
-/* 3. Estilos del Contenido Principal (Formulario y Tabla) */
-
 .col-form-label.text-end {
     text-align: right;
     font-weight: 500;
     font-size: 0.9rem;
 }
 
-/* Estilo para los inputs de solo lectura */
 #noEmpleado, #tutorName {
     background-color: #f1f1f1;
     cursor: not-allowed;
 }
 
-/* Encabezado de la tabla */
 .custom-table-header th {
     background-color: var(--utng-dark-blue); 
     color: white;
@@ -89,17 +81,14 @@ body {
     white-space: nowrap;
 }
 
-/* Estilos para filas seleccionables */
 #tutorTable tbody tr {
     cursor: pointer;
     transition: background-color 0.2s ease;
 }
-/* Fila seleccionada */
 #tutorTable tbody tr.table-primary {
     background-color: #cfe2ff !important; 
 }
 
-/* Estilos de Botones */
 .custom-btn-actualizar {
     background-color: var(--utng-actualizar-btn); 
     border-color: var(--utng-actualizar-btn);
@@ -149,7 +138,6 @@ body {
     border-color: #bbdefb;
 }
 
-/* Badge de estado del tutor */
 .badge {
     font-size: 0.85em;
     font-weight: 600;
@@ -161,7 +149,6 @@ body {
     background-color: #dc3545 !important;
 }
 
-/* Estilo para el botón de cerrar modal */
 .custom-btn-cerrar {
     background-color: #6c757d;
     border-color: #6c757d;
