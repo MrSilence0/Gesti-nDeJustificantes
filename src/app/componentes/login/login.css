@@ -1,43 +1,39 @@
-/* Colores principales y nuevo azul oscuro */
+
+/* Colores principales */
 :root {
-    --utng-dark-blue: #043c7b; /* Nuevo color azul oscuro solicitado */
+    --utng-dark-blue: #043c7b; /* Azul del header del sistema */
     --utng-teal: #3ABFBC; /* Teal/Aqua para los botones de acción */
-    --utng-purple: #8655c6; /* Púrpura */
-    --utng-green: #37b752; /* Verde Comunicación */
-    --utng-orange: #ff8c00; /* Naranja Transparencia */
-    --utng-red: #c63737; /* Rojo Responsabilidad */
-    --utng-pink: #f06292; /* Rosa Rendición de Cuentas */
-    --utng-yellow: #ffc107; /* Amarillo Honestidad */
-    --utng-blue-light: #37a8b7; /* Azul Paz */
+    --utng-error-red: #dc3545; /* Rojo de Bootstrap para errores */
     --custom-text-color: #343a40; 
 }
 
 /* Estilos de la página de registro */
 body {
-    background-color: #f8f9fa; 
+    background-color: white; /* Fondo blanco solicitado */
     font-family: 'Arial', sans-serif;
 }
 
-/* --- CORRECCIÓN CLAVE 1: Tarjeta más ancha --- */
+/* Tarjeta Principal */
 .custom-card-registro {
     width: 100%;
-    max-width: 500px; /* Aumentado de 400px a 500px */
+    max-width: 500px; /* Tamaño apropiado para el formulario */
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     background-color: white;
 }
 
-/* Logo */
+/* Logo de la Universidad */
 .logo-container {
-    height: 60px; 
+    height: auto; 
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 0 !important; 
+    /* Ajusta el tamaño del logo para que se vea como en la referencia de registro */
 }
 
-.custom-logo {
-    max-height: 100%;
+/* Estilo para la imagen de logo completa */
+.custom-logo-full {
+    max-height: 80px; 
     width: auto;
 }
 
@@ -58,89 +54,60 @@ body {
     font-size: 1.1rem !important;
 }
 
-/* --- CORRECCIÓN CLAVE 2: Contenedor de frases más alto --- */
-.dynamic-text-container {
-    height: 160px; /* Aumentado de 120px a 160px para el texto */
-    border: 2px solid #ccc;
-    border-radius: 10px;
-    padding: 15px;
-    text-align: center;
-    overflow: hidden;
-    transition: opacity 0.5s ease-in-out;
+/* --- Campos de Formulario (Inputs) --- */
+.custom-input {
+    /* Estilo por defecto: borde delgado similar al teal/gris claro */
+    border-color: #ced4da; /* Gris por defecto */
+    border-width: 1px;
+    height: 50px;
+    font-size: 1.1rem;
+    padding: 10px 15px;
+    border-radius: 8px;
+    box-shadow: none !important;
 }
 
-/* Estilos para la frase inicial de bienvenida */
-.phrase-main {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: var(--utng-dark-blue);
+.custom-input:focus {
+    /* Borde en color teal al enfocar, como el estilo original */
+    border-color: var(--utng-teal);
+    box-shadow: 0 0 0 0.25rem rgba(58, 191, 188, 0.25) !important; 
 }
 
-.phrase-aguilas {
-    display: block;
+/* --- Estilos de Validación de Error --- */
+/* Estilo del borde rojo para campos inválidos */
+.custom-input.is-invalid {
+    border-color: var(--utng-error-red) !important;
+    padding-right: calc(1.5em + 0.75rem); /* Espacio para el ícono de error de Bootstrap */
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3cpath stroke-linecap='round' d='M6 8.25h.01'/%3e%3c/svg%3e") !important;
+    background-repeat: no-repeat !important;
+    background-position: right calc(0.375em + 0.1875rem) center !important;
+    background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem) !important;
 }
 
-.phrase-utng {
-    font-size: 1.8rem;
-    display: block;
-    color: var(--utng-teal);
-    line-height: 1;
+/* Estilo para el mensaje de error superior (Modal-like appearance) */
+.error-modal-style {
+    color: var(--utng-error-red);
+    background-color: #f8d7da; /* Fondo rojo muy claro */
+    border-color: #f5c6cb;
+    text-align: left;
+    font-weight: 600;
+    border-radius: 8px;
+    /* Ajustes para el ícono de exclamación */
 }
 
-/* Estilos para las frases de valores */
-.phrase-title {
-    font-size: 1.5rem;
-    font-weight: 900;
-    margin-bottom: 5px;
-    line-height: 1.1;
-    text-transform: uppercase;
-}
-
-.phrase-body {
-    font-style: italic;
-    font-size: 0.95rem;
-    color: #495057;
-    /* Ajuste para que el texto largo quepa mejor */
-    line-height: 1.3;
-}
-
-/* Clases de color para los títulos de valores */
-.purple-text { color: var(--utng-purple); }
-.green-text { color: var(--utng-green); }
-.orange-text { color: var(--utng-orange); }
-.blue-text { color: var(--utng-blue-light); }
-.yellow-text { color: var(--utng-yellow); }
-.red-text { color: var(--utng-red); }
-.pink-text { color: var(--utng-pink); }
-
-
-/* --- Botones --- */
-.custom-btn-register, .custom-btn-login {
+/* --- Botón Registrarme --- */
+.custom-btn-register {
     font-size: 1.25rem;
     padding: 10px 0;
     border: none;
     border-radius: 8px;
     font-weight: 600;
     transition: background-color 0.2s;
-}
-
-.custom-btn-register {
-    background-color: var(--utng-teal);
+    background-color: var(--utng-teal); /* Color teal para el botón de acción */
     color: white;
 }
 
 .custom-btn-register:hover {
-    background-color: #30a09e;
-    color: white;
-}
-
-.custom-btn-login {
-    background-color: #3ABFBC; 
-    color: white;
-}
-
-.custom-btn-login:hover {
-    background-color: #30a09e;
+    background-color: #30a09e; 
     color: white;
 }
 

@@ -10,11 +10,11 @@
 </head>
 <body class="d-flex align-items-center justify-content-center min-vh-100">
 
-    <div class="card custom-card-registro shadow-lg p-3">
+    <div class="card custom-card-registro shadow-lg p-4">
         <div class="card-body text-center">
             
-            <div class="logo-container mb-3">
-                <img src="/src/app/componentes/images/LogoUtng.png" alt="Logo UTNG" class="img-fluid custom-logo">
+            <div class="logo-container mb-4">
+                <img src="/src/app/componentes/images/LogoUtng.png" alt="Logo UTNG" class="img-fluid custom-logo-full">
             </div>
 
             <div class="system-header-login p-2 mb-4">
@@ -22,62 +22,92 @@
                 <h2 class="fs-5 mb-0 text-white">- ÁREA TI</h2>
             </div>
             
-            <div id="dynamicText" class="dynamic-text-container mb-4 d-flex align-items-center justify-content-center">
-                </div>
-
-            <div class="d-grid gap-3 mb-4">
-                <button type="button" class="btn btn-lg custom-btn-register">Registrarse</button>
-                <button type="button" class="btn btn-lg custom-btn-login">Iniciar Sesión</button>
+            <div id="errorMessage" class="alert alert-danger error-modal-style d-none mb-4" role="alert">
+                <i class="bi bi-exclamation-triangle-fill"></i> Por favor, revisa y llena todos los campos obligatorios.
             </div>
 
+            <form id="registroForm">
+                
+                <div class="mb-3">
+                    <input type="text" class="form-control custom-input" id="noControl" placeholder="No. de Control o No. de Empleado" required>
+                </div>
+                
+                <div class="mb-3">
+                    <input type="text" class="form-control custom-input" id="nombre" placeholder="Nombre(s)" required>
+                </div>
+
+                <div class="mb-3">
+                    <input type="text" class="form-control custom-input" id="apellidoPaterno" placeholder="Apellido Paterno" required>
+                </div>
+
+                <div class="mb-3">
+                    <input type="text" class="form-control custom-input" id="apellidoMaterno" placeholder="Apellido Materno" required>
+                </div>
+                
+                <div class="mb-3">
+                    <input type="email" class="form-control custom-input" id="correo" placeholder="Correo electrónico" required>
+                </div>
+
+                <div class="mb-3">
+                    <input type="password" class="form-control custom-input" id="contrasena" placeholder="Contraseña" required>
+                </div>
+
+                <div class="mb-4">
+                    <input type="password" class="form-control custom-input" id="confirmarContrasena" placeholder="Confirmar Contraseña" required>
+                </div>
+
+                <div class="d-grid mb-4">
+                    <button type="submit" class="btn btn-lg custom-btn-register" onclick="location.href='/src/app/componentes/inicio-sesion/inicio-sesion.html'">Registrarme</button>
+                </div>
+            </form>
+
             <div class="text-center mt-4">
-                <p class="mb-1"><a href="#" class="text-decoration-none">Consulta nuestras Políticas de Privacidad</a></p>
-                <small class="text-muted d-block">Español - México (es_mx) | <a href="#" class="text-decoration-none">Aviso sobre cookies</a></small>
+                <p class="mb-1"><a href="#" class="text-decoration-none small">Consulta nuestras Políticas de Privacidad</a></p>
+                <small class="text-muted d-block small">Español - México (es_mx) | <a href="#" class="text-decoration-none">Aviso sobre cookies</a></small>
             </div>
         </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const dynamicTextContainer = document.getElementById('dynamicText');
-            let currentPhraseIndex = 0;
+        document.getElementById('registroForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const form = event.target;
+            let isValid = true;
+            const errorMessage = document.getElementById('errorMessage');
+            const inputs = form.querySelectorAll('.custom-input');
 
-            const phrases = [
-                // 1. Frase inicial solicitada
-                '<div class="phrase-main"><span class="phrase-aguilas">¡ORGULLOSAMENTE ÁGUILAS</span> <span class="phrase-utng">ORGULLOSAMENTE UTNG!</span></div>',
-                
-                // 2. Frases basadas en las imágenes
-                '<div class="phrase-title purple-text">Respeto</div><div class="phrase-body">Tratamos a las personas con dignidad y apreciamos sus opiniones.</div>',
-                '<div class="phrase-title green-text">Comunicación</div><div class="phrase-body">No damos nada por obvio. No suponemos.</div>',
-                '<div class="phrase-title purple-text">Trabajo en equipo</div><div class="phrase-body">El éxito de la UTNG lo construimos juntos.</div>',
-                '<div class="phrase-title orange-text">Transparencia</div><div class="phrase-body">Brindamos acceso a toda la información pública que se genere o posea la universidad.</div>',
-                '<div class="phrase-title blue-text">Paz</div><div class="phrase-body">Respetamos las opiniones de los demás.</div>',
-                '<div class="phrase-title yellow-text">Honestidad</div><div class="phrase-body">Respetamos la verdad.</div>',
-                '<div class="phrase-title red-text">Responsabilidad</div><div class="phrase-body">Reconocemos nuestros errores al tiempo que buscamos corregirlos.</div>',
-                '<div class="phrase-title pink-text">Rendición de Cuentas</div><div class="phrase-body">Informamos sobre el buen uso de los recursos asignados.</div>',
-            ];
+            // 1. Limpiar estilos de error anteriores
+            inputs.forEach(input => {
+                input.classList.remove('is-invalid');
+            });
 
-            function updateDynamicText() {
-                // Aplicar transición de salida
-                dynamicTextContainer.style.opacity = '0'; 
-
-                setTimeout(() => {
-                    // Cambiar el contenido
-                    dynamicTextContainer.innerHTML = phrases[currentPhraseIndex];
-                    
-                    // Aplicar transición de entrada
-                    dynamicTextContainer.style.opacity = '1';
-                    
-                    // Mover al siguiente índice
-                    currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
-                }, 500); // Espera 0.5s para que la opacidad llegue a 0
+            // 2. Validar campos
+            inputs.forEach(input => {
+                if (input.value.trim() === '') {
+                    input.classList.add('is-invalid');
+                    isValid = false;
+                }
+            });
+            
+            // 3. Validar coincidencia de contraseñas si están llenas
+            const contrasena = document.getElementById('contrasena');
+            const confirmarContrasena = document.getElementById('confirmarContrasena');
+            if (contrasena.value.trim() !== '' && confirmarContrasena.value.trim() !== '' && contrasena.value !== confirmarContrasena.value) {
+                contrasena.classList.add('is-invalid');
+                confirmarContrasena.classList.add('is-invalid');
+                isValid = false;
             }
 
-            // Iniciar el carrusel y establecer el intervalo de cambio
-            updateDynamicText(); // Muestra la primera frase inmediatamente
-            setInterval(updateDynamicText, 5000); // Cambia cada 5 segundos
+            // 4. Mostrar u ocultar mensaje de error
+            if (!isValid) {
+                errorMessage.classList.remove('d-none');
+            } else {
+                errorMessage.classList.add('d-none');
+                // Aquí iría la lógica para enviar el formulario (AJAX o submit real)
+                alert('¡Formulario válido! Enviando datos de registro...');
+                // form.submit(); 
+            }
         });
     </script>
 </body>
