@@ -3,240 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perfil de Usuario - Oswaldo Ibarra</title>
+    <title>Perfil de Usuario - UserName</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     
-    <style>
-        :root {
-            --utng-blue: #002D62; /* Color de tu navbar de referencia */
-            --utng-purple: #6C5CE7; /* Color de tu barra de procesos de referencia */
-            --required-red: #DC3545;
-            --info-blue: #0D6EFD;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f8f9fa; /* Fondo Bootstrap Light */
-            padding-top: 20px;
-            padding-bottom: 50px;
-        }
-
-        .profile-container {
-            background-color: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
-            max-width: 900px;
-            margin: auto;
-            padding: 30px;
-            position: relative;
-        }
-
-        .form-header {
-            display: flex;
-            justify-content: flex-end;
-            font-size: 0.9em;
-            margin-bottom: 20px;
-        }
-        
-        .form-header a {
-            color: var(--info-blue);
-            text-decoration: none;
-            margin-left: 15px;
-        }
-
-        .field-row {
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-            flex-wrap: nowrap;
-        }
-
-        .field-label {
-            flex: 0 0 220px; /* Ancho fijo para las etiquetas */
-            color: #555;
-            font-size: 0.95em;
-            padding-right: 20px;
-            text-align: right;
-        }
-
-        .field-input-wrapper {
-            flex: 1;
-            display: flex;
-            align-items: center;
-        }
-
-        .form-control, .form-select {
-            border-color: #dee2e6;
-            font-size: 0.95em;
-        }
-
-        /* Iconos de Requerido e Información */
-        .required-icon {
-            color: var(--required-red);
-            font-size: 1.1em;
-            margin-left: 10px;
-        }
-        .info-icon {
-            color: var(--info-blue);
-            margin-left: 10px;
-            font-size: 1.1em;
-            cursor: help;
-        }
-
-        /* Títulos de Sección Colapsables */
-        .section-title {
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: var(--utng-blue);
-            margin-top: 25px;
-            margin-bottom: 15px;
-            cursor: pointer;
-        }
-        .section-title i {
-            font-size: 0.8em;
-            margin-right: 8px;
-        }
-        /* Estilo para el icono de expansión/contracción */
-        .section-title[aria-expanded="false"] .bi-chevron-down::before {
-            content: "\f282"; /* Icono bi-chevron-right (o similar) para cerrado */
-        }
-        .section-title[aria-expanded="true"] .bi-chevron-down::before {
-            content: "\f286"; /* Icono bi-chevron-down para abierto */
-        }
-
-        /* Editor de Descripción (simulación con textarea) */
-        .editor-container {
-            border: 1px solid #dee2e6;
-            border-radius: 4px;
-        }
-        .editor-toolbar {
-            background-color: #f7f7f7;
-            border-bottom: 1px solid #dee2e6;
-            padding: 5px;
-            display: flex;
-            flex-wrap: wrap;
-        }
-        .editor-toolbar button {
-            background: none;
-            border: none;
-            color: #555;
-            padding: 5px 8px;
-            font-size: 1em;
-            cursor: pointer;
-        }
-        .editor-toolbar button:hover {
-            background-color: #e9e9e9;
-        }
-        .editor-textarea {
-            width: 100%;
-            height: 150px;
-            border: none;
-            padding: 10px;
-            resize: vertical;
-            outline: none;
-        }
-        .editor-footer {
-            background-color: #f7f7f7;
-            border-top: 1px solid #dee2e6;
-            padding: 5px 10px;
-            text-align: right;
-            font-size: 0.8em;
-            color: #777;
-        }
-
-        /* Sección Imagen de Usuario */
-        .current-image-area {
-            display: flex;
-            align-items: center;
-        }
-        .current-image-area img {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            margin-right: 15px;
-            border: 1px solid #dee2e6;
-        }
-
-        /* Área de Subida de Archivos */
-        .upload-options button {
-            font-size: 0.9em;
-            border: 1px solid #dee2e6;
-        }
-        .upload-options .btn-primary {
-            background-color: var(--utng-purple);
-            border-color: var(--utng-purple);
-        }
-        .drop-zone {
-            border: 2px dashed #adb5bd;
-            border-radius: 5px;
-            padding: 30px 20px;
-            text-align: center;
-            color: #6c757d;
-            background-color: #fcfcfc;
-            margin-top: 10px;
-        }
-        .drop-zone i {
-            font-size: 2rem;
-            margin-bottom: 10px;
-        }
-        .upload-info {
-            font-size: 0.8em;
-            color: #6c757d;
-            margin-top: 5px;
-        }
-
-        /* Botones de Acción */
-        .btn-primary {
-            background-color: var(--utng-blue) !important;
-            border-color: var(--utng-blue) !important;
-        }
-        .btn-secondary {
-            background-color: #6c757d !important;
-            border-color: #6c757d !important;
-        }
-
-        /* Elementos extra de layout */
-        .expand-link {
-            position: absolute;
-            top: 120px;
-            right: 30px;
-            font-size: 0.9em;
-            color: var(--info-blue);
-            text-decoration: none;
-        }
-        .help-circle {
-            position: absolute;
-            top: 30px;
-            right: 30px;
-            background-color: #adb5bd;
-            color: white;
-            border-radius: 50%;
-            width: 25px;
-            height: 25px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            font-size: 1.1em;
-            cursor: help;
-        }
-    </style>
+    <link rel="stylesheet" href="datos-personales.css">
 </head>
 <body>
 
+    <nav class="navbar navbar-expand-lg navbar-dark custom-navbar-bg fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand me-4" href="#">
+                <img src="/src/app/componentes/images/LogoUtng.png" alt="Logo Universidad" height="50">
+            </a>
+
+            <div class="d-flex flex-column text-white">
+                <h1 class="fs-4 mb-0">SISTEMA DE JUSTIFICANTES</h1>
+                <h2 class="fs-5 mb-0">- ÁREA TI</h2>
+            </div>
+
+            <div class="ms-auto d-flex align-items-center">
+                <div class="dropdown me-3">
+                    <button class="btn p-0 position-relative" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="notificacionesDropdown">
+                        <i class="bi bi-bell-fill fs-3 custom-notification-icon"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger custom-notification-badge">
+                            3
+                            <span class="visually-hidden">Notificaciones no leídas</span>
+                        </span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="notificacionesDropdown">
+                        <li><h6 class="dropdown-header">Notificaciones</h6></li>
+                        <li><a class="dropdown-item" href="#">Tienes 2 solicitudes pendientes.</a></li>
+                        <li><a class="dropdown-item" href="#">Se ha subido un nuevo justificante.</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item text-center text-primary" href="#">Ver todas las Notificaciones</a></li>
+                    </ul>
+                </div>
+
+                <div class="dropdown">
+                    <span class="text-white me-2">User Name</span>
+                    
+                    <button class="btn dropdown-toggle p-0" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="userDropdown">
+                        <i class="bi bi-person-circle fs-2 custom-user-icon"></i>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                        <li><a class="dropdown-item" href="/src/app/componentes/perfil/vista-general/vista-general.html">Perfil</a></li>
+                        <li><a class="dropdown-item" href="/src/app/componentes/inicio-sesion/inicio-sesion.html">Cerrar Sesión</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid custom-main-content p-0">
+        
+        <div class="row g-0">
+            <div class="col-12 custom-purple-bar">
+                <div class="dropdown" id="procesosDropdownContainer">
+                    <button class="custom-link-dropdown dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-chevron-down-fill me-2"></i> Procesos
+                    </button>
+                    
+                    <ul class="dropdown-menu custom-dropdown-menu" aria-labelledby="procesosDropdown">
+                        <li><a class="dropdown-item" href="/src/app/componentes/home/home.html" class="active">Menú Principal</a></li>
+                        <li><a class="dropdown-item" href="#">placeholder</a></li>
+                        <li><a class="dropdown-item" href="#">placeholder</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="active-option-bar">
+            Actualiza Datos Personales
+        
+        </div>
     <div class="profile-container">
         
-        <div class="form-header">
-            <a href="#" class="me-2">Preferencias</a>
-            <span class="text-secondary">•</span>
-            <a href="#" class="ms-2">Editar perfil</a>
-        </div>
         
-        <h1 class="fs-4 mb-1">Oswaldo Ibarra Cárdenas</h1>
-        <h2 class="fs-5 mb-4 text-muted">Oswaldo Ibarra Cárdenas</h2>
+        <h1 class="fs-4 mb-1">User name</h1>
+        <h2 class="fs-5 mb-4 text-muted">User last name</h2>
 
-        <a href="#" class="expand-link">Expandir todo</a>
         <div class="help-circle d-none d-lg-flex">?</div>
 
         <div class="accordion" id="profileAccordion">
@@ -251,7 +96,7 @@
                     <div class="field-row">
                         <label for="nombre" class="field-label">Nombre</label>
                         <div class="field-input-wrapper">
-                            <input type="text" class="form-control" id="nombre" value="Oswaldo">
+                            <input type="text" class="form-control" id="nombre" value="User Name">
                             <i class="bi bi-x-circle-fill required-icon"></i>
                             <i class="bi bi-question-circle-fill info-icon"></i>
                         </div>
@@ -260,7 +105,7 @@
                     <div class="field-row">
                         <label for="apellidos" class="field-label">Apellido(s)</label>
                         <div class="field-input-wrapper">
-                            <input type="text" class="form-control" id="apellidos" value="Ibarra Cárdenas">
+                            <input type="text" class="form-control" id="apellidos" value="User Last Name">
                             <i class="bi bi-x-circle-fill required-icon"></i>
                             <i class="bi bi-question-circle-fill info-icon"></i>
                         </div>
@@ -269,7 +114,7 @@
                     <div class="field-row">
                         <label for="email" class="field-label">Dirección Email</label>
                         <div class="field-input-wrapper">
-                            <input type="email" class="form-control" id="email" value="1224100506.oic@gmail.com">
+                            <input type="email" class="form-control" id="email" value="user.email@example.com">
                             <i class="bi bi-x-circle-fill required-icon"></i>
                             <i class="bi bi-question-circle-fill info-icon"></i>
                         </div>
@@ -391,29 +236,23 @@
             </div>
 
             <h3 class="section-title collapsed" data-bs-toggle="collapse" data-bs-target="#collapseNombres" aria-expanded="false" aria-controls="collapseNombres">
-                <i class="bi bi-chevron-right"></i> Nombres adicionales
+                <i class="bi bi-chevron-right"></i> Actualizar Contraseña
+                
             </h3>
-            <div id="collapseNombres" class="accordion-collapse collapse"></div>
-
-            <h3 class="section-title collapsed" data-bs-toggle="collapse" data-bs-target="#collapseIntereses" aria-expanded="false" aria-controls="collapseIntereses">
-                <i class="bi bi-chevron-right"></i> Intereses
-            </h3>
-            <div id="collapseIntereses" class="accordion-collapse collapse"></div>
-
-            <h3 class="section-title collapsed" data-bs-toggle="collapse" data-bs-target="#collapseOpcional" aria-expanded="false" aria-controls="collapseOpcional">
-                <i class="bi bi-chevron-right"></i> Opcional
-            </h3>
-            <div id="collapseOpcional" class="accordion-collapse collapse"></div>
+            <div id="collapseNombres" class="accordion-collapse collapse">
+                <button type="button" class="btn btn-password" type="button" onclick="location.href='/src/app/componentes/perfil/actualizar-contrasena/actualizar-contrasena.html'">Actualizar Contraseña</button>
+            </div>
 
             <div class="d-flex justify-content-start mt-4 pt-3 border-top">
-                <button type="submit" class="btn btn-primary me-2">Actualizar información personal</button>
-                <button type="button" class="btn btn-secondary">Cancelar</button>
+                <button type="submit" class="btn btn-primary me-2" type="button" onclick="location.href='/src/app/componentes/perfil/vista-general/vista-general.html'">Actualizar información personal</button>
+                <button type="button" class="btn btn-secondary" type="button" onclick="location.href='/src/app/componentes/perfil/vista-general/vista-general.html'">Cancelar</button>
             </div>
 
             <div class="text-danger mt-3">
                 <i class="bi bi-x-octagon-fill"></i> Requerido
             </div>
 
-        </div> </div> <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        </div> </div> 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>

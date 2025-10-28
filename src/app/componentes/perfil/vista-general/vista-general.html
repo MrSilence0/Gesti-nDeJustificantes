@@ -173,24 +173,24 @@
     <nav class="navbar navbar-expand-lg navbar-dark custom-navbar-bg fixed-top">
         <div class="container-fluid">
             <a class="navbar-brand me-4" href="#">
-                <img src="Universidad_Tecnológica_del_Norte_de_Guanajuato_(UTNG).png" alt="Logo Universidad" height="50"> 
+                <img src="/src/app/componentes/images/LogoUtng.png" alt="Logo Universidad" height="50"> 
             </a>
 
             <div class="d-flex flex-column text-white">
-                <h1 class="fs-4 mb-0">SISTEMA INTEGRADO</h1>
-                <h2 class="fs-5 mb-0">- PERFIL DE USUARIO</h2> 
+                <h1 class="fs-4 mb-0">SISTEMA DE JUSTIFICANTES</h1>
+                <h2 class="fs-5 mb-0">- ÁREA TI</h2>
             </div>
 
             <div class="ms-auto d-flex align-items-center">
                 <div class="dropdown">
-                    <span class="text-white me-2">Adrián Ramírez Flores</span> 
+                    <span class="text-white me-2">UserName</span> 
                     
                     <button class="btn dropdown-toggle p-0" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="userDropdown">
                         <i class="bi bi-person-circle fs-2 custom-user-icon"></i>
                     </button>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
-                        <li><a class="dropdown-item" href="#">Perfil</a></li>
-                        <li><a class="dropdown-item" href="#">Cerrar Sesión</a></li>
+                        <li><a class="dropdown-item" href="/src/app/componentes/perfil/vista-general/vista-general.html">Perfil</a></li>
+                        <li><a class="dropdown-item" href="/src/app/componentes/inicio-sesion/inicio-sesion.html">Cerrar Sesión</a></li>
                     </ul>
                 </div>
             </div>
@@ -206,9 +206,9 @@
                     </button>
                     
                     <ul class="dropdown-menu custom-dropdown-menu" aria-labelledby="procesosDropdown">
-                        <li><a class="dropdown-item" href="#" class="active">Menú Principal</a></li>
-                        <li><a class="dropdown-item" href="#">Mis Cursos</a></li>
-                        <li><a class="dropdown-item" href="#">Mis Calificaciones</a></li>
+                        <li><a class="dropdown-item" href="/src/app/componentes/home/home.html" class="active">Menú Principal</a></li>
+                        <li><a class="dropdown-item" href="#">placeholder</a></li>
+                        <li><a class="dropdown-item" href="#">placeholder</a></li>
                     </ul>
                 </div>
             </div>
@@ -228,9 +228,9 @@
                         <img src="avatar_pez.png" alt="Avatar de Usuario"> 
                     </div>
                     <div class="profile-name">
-                        Adrián Ramírez Flores
+                        UserName
                     </div>
-                    <button class="btn btn-primary btn-edit-profile">
+                    <button class="btn btn-primary btn-edit-profile" type="button" onclick="location.href='/src/app/componentes/perfil/datos-personales/datos-personales.html'">
                         Editar perfil
                     </button>
                 </div>
@@ -241,12 +241,12 @@
                         <div class="col-md-6 p-4">
                             <div class="d-flex justify-content-between align-items-baseline">
                                 <h5 class="detail-title">Detalles de usuario</h5>
-                                <a href="#" class="detail-value" style="font-size: 0.9rem;">Editar perfil</a>
+                                <a href="/src/app/componentes/perfil/datos-personales/datos-personales.html" class="detail-value" style="font-size: 0.9rem;">Editar perfil</a>
                             </div>
                             
                             <div class="detail-row">
                                 <div class="detail-label">Dirección Email</div>
-                                <div class="detail-value">1224100506.oic@gmail.com (Visible para otros participantes del curso)</div>
+                                <div class="detail-value">placeholder@gmail.com (Visible para otros participantes del curso)</div>
                             </div>
                             
                             <div class="detail-row">
@@ -261,7 +261,7 @@
 
                             <div class="detail-row">
                                 <div class="detail-label">Zona horaria</div>
-                                <div class="detail-value">America/Chihuahua</div>
+                                <div class="detail-value">México City</div>
                             </div>
 
                             </div>

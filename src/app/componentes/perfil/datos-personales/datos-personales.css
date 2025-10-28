@@ -1,0 +1,281 @@
+:root {
+    --utng-blue: #002D62; /* Color de tu navbar de referencia */
+    --utng-purple: #6C5CE7; /* Color de tu barra de procesos de referencia */
+    --required-red: #DC3545;
+    --info-blue: #0D6EFD;
+    --utng-dark-blue: #043c7b; /* Navbar principal */
+    --utng-purple: #7c4dff; /* Barra de Procesos */
+    --utng-active-green: #00a896; /* Opción activa - Verde/Teal */
+    --utng-light-gray: #f8f9fa; /* Fondo general */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa; /* Fondo Bootstrap Light */
+    padding-top: 20px;
+    padding-bottom: 50px;
+}
+
+.profile-container {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    margin: auto;
+    padding: 30px;
+    position: relative;
+}
+
+.form-header {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 0.9em;
+    margin-bottom: 20px;
+}
+
+.form-header a {
+    color: var(--info-blue);
+    text-decoration: none;
+    margin-left: 15px;
+}
+
+.field-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    flex-wrap: nowrap;
+}
+
+.field-label {
+    flex: 0 0 220px; /* Ancho fijo para las etiquetas */
+    color: #555;
+    font-size: 0.95em;
+    padding-right: 20px;
+    text-align: right;
+}
+
+.field-input-wrapper {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.form-control, .form-select {
+    border-color: #dee2e6;
+    font-size: 0.95em;
+}
+
+/* Iconos de Requerido e Información */
+.required-icon {
+    color: var(--required-red);
+    font-size: 1.1em;
+    margin-left: 10px;
+}
+.info-icon {
+    color: var(--info-blue);
+    margin-left: 10px;
+    font-size: 1.1em;
+    cursor: help;
+}
+
+/* Títulos de Sección Colapsables */
+.section-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--utng-blue);
+    margin-top: 25px;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+.section-title i {
+    font-size: 0.8em;
+    margin-right: 8px;
+}
+/* Estilo para el icono de expansión/contracción */
+.section-title[aria-expanded="false"] .bi-chevron-down::before {
+    content: "\f282"; /* Icono bi-chevron-right (o similar) para cerrado */
+}
+.section-title[aria-expanded="true"] .bi-chevron-down::before {
+    content: "\f286"; /* Icono bi-chevron-down para abierto */
+}
+
+/* Editor de Descripción (simulación con textarea) */
+.editor-container {
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+}
+.editor-toolbar {
+    background-color: #f7f7f7;
+    border-bottom: 1px solid #dee2e6;
+    padding: 5px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.editor-toolbar button {
+    background: none;
+    border: none;
+    color: #555;
+    padding: 5px 8px;
+    font-size: 1em;
+    cursor: pointer;
+}
+.editor-toolbar button:hover {
+    background-color: #e9e9e9;
+}
+.editor-textarea {
+    width: 100%;
+    height: 150px;
+    border: none;
+    padding: 10px;
+    resize: vertical;
+    outline: none;
+}
+.editor-footer {
+    background-color: #f7f7f7;
+    border-top: 1px solid #dee2e6;
+    padding: 5px 10px;
+    text-align: right;
+    font-size: 0.8em;
+    color: #777;
+}
+
+/* Sección Imagen de Usuario */
+.current-image-area {
+    display: flex;
+    align-items: center;
+}
+.current-image-area img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 15px;
+    border: 1px solid #dee2e6;
+}
+
+/* Área de Subida de Archivos */
+.upload-options button {
+    font-size: 0.9em;
+    border: 1px solid #dee2e6;
+}
+.upload-options .btn-primary {
+    background-color: var(--utng-purple);
+    border-color: var(--utng-purple);
+}
+.drop-zone {
+    border: 2px dashed #adb5bd;
+    border-radius: 5px;
+    padding: 30px 20px;
+    text-align: center;
+    color: #6c757d;
+    background-color: #fcfcfc;
+    margin-top: 10px;
+}
+.drop-zone i {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+.upload-info {
+    font-size: 0.8em;
+    color: #6c757d;
+    margin-top: 5px;
+}
+
+/* Botones de Acción */
+.btn-primary {
+    background-color: var(--utng-blue) !important;
+    border-color: var(--utng-blue) !important;
+}
+.btn-secondary {
+    background-color: #6c757d !important;
+    border-color: #6c757d !important;
+}
+.btn-password {
+    background-color: var(--utng-purple);
+    border-color: var(--utng-purple);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+/* Elementos extra de layout */
+.expand-link {
+    position: absolute;
+    top: 120px;
+    right: 30px;
+    font-size: 0.9em;
+    color: var(--info-blue);
+    text-decoration: none;
+}
+.help-circle {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    background-color: #adb5bd;
+    color: white;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.1em;
+    cursor: help;
+}
+.custom-navbar-bg {
+    background-color: var(--utng-dark-blue);
+    padding-top: 5px;
+    padding-bottom: 5px;
+    z-index: 1030; 
+}
+
+.custom-user-icon, .custom-notification-icon {
+    color: white; 
+    cursor: pointer;
+}
+
+.custom-main-content {
+    margin-top: 60px; 
+    background-color: var(--utng-light-gray);
+    padding: 0 !important;
+}
+
+.custom-notification-badge {
+    font-size: 0.75rem; 
+    padding: 0.2em 0.4em;
+}
+
+.custom-purple-bar {
+    background-color: var(--utng-purple);
+    padding: 0.5rem 1rem; 
+    color: white;
+    width: 100%;
+}
+
+.custom-link-dropdown {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    color: white;
+    font-size: 1.25rem; 
+    font-weight: 500;
+    cursor: pointer;
+    text-align: left;
+    display: inline-flex; 
+    align-items: center;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+.active-option-bar {
+    background-color: var(--utng-active-green);
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    text-align: left; 
+    width: 100%;
+}
