@@ -1,1 +1,419 @@
-<p>datos-personales works!</p>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil de Usuario - Oswaldo Ibarra</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <style>
+        :root {
+            --utng-blue: #002D62; /* Color de tu navbar de referencia */
+            --utng-purple: #6C5CE7; /* Color de tu barra de procesos de referencia */
+            --required-red: #DC3545;
+            --info-blue: #0D6EFD;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa; /* Fondo Bootstrap Light */
+            padding-top: 20px;
+            padding-bottom: 50px;
+        }
+
+        .profile-container {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+            max-width: 900px;
+            margin: auto;
+            padding: 30px;
+            position: relative;
+        }
+
+        .form-header {
+            display: flex;
+            justify-content: flex-end;
+            font-size: 0.9em;
+            margin-bottom: 20px;
+        }
+        
+        .form-header a {
+            color: var(--info-blue);
+            text-decoration: none;
+            margin-left: 15px;
+        }
+
+        .field-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            flex-wrap: nowrap;
+        }
+
+        .field-label {
+            flex: 0 0 220px; /* Ancho fijo para las etiquetas */
+            color: #555;
+            font-size: 0.95em;
+            padding-right: 20px;
+            text-align: right;
+        }
+
+        .field-input-wrapper {
+            flex: 1;
+            display: flex;
+            align-items: center;
+        }
+
+        .form-control, .form-select {
+            border-color: #dee2e6;
+            font-size: 0.95em;
+        }
+
+        /* Iconos de Requerido e Información */
+        .required-icon {
+            color: var(--required-red);
+            font-size: 1.1em;
+            margin-left: 10px;
+        }
+        .info-icon {
+            color: var(--info-blue);
+            margin-left: 10px;
+            font-size: 1.1em;
+            cursor: help;
+        }
+
+        /* Títulos de Sección Colapsables */
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--utng-blue);
+            margin-top: 25px;
+            margin-bottom: 15px;
+            cursor: pointer;
+        }
+        .section-title i {
+            font-size: 0.8em;
+            margin-right: 8px;
+        }
+        /* Estilo para el icono de expansión/contracción */
+        .section-title[aria-expanded="false"] .bi-chevron-down::before {
+            content: "\f282"; /* Icono bi-chevron-right (o similar) para cerrado */
+        }
+        .section-title[aria-expanded="true"] .bi-chevron-down::before {
+            content: "\f286"; /* Icono bi-chevron-down para abierto */
+        }
+
+        /* Editor de Descripción (simulación con textarea) */
+        .editor-container {
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+        }
+        .editor-toolbar {
+            background-color: #f7f7f7;
+            border-bottom: 1px solid #dee2e6;
+            padding: 5px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .editor-toolbar button {
+            background: none;
+            border: none;
+            color: #555;
+            padding: 5px 8px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+        .editor-toolbar button:hover {
+            background-color: #e9e9e9;
+        }
+        .editor-textarea {
+            width: 100%;
+            height: 150px;
+            border: none;
+            padding: 10px;
+            resize: vertical;
+            outline: none;
+        }
+        .editor-footer {
+            background-color: #f7f7f7;
+            border-top: 1px solid #dee2e6;
+            padding: 5px 10px;
+            text-align: right;
+            font-size: 0.8em;
+            color: #777;
+        }
+
+        /* Sección Imagen de Usuario */
+        .current-image-area {
+            display: flex;
+            align-items: center;
+        }
+        .current-image-area img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-right: 15px;
+            border: 1px solid #dee2e6;
+        }
+
+        /* Área de Subida de Archivos */
+        .upload-options button {
+            font-size: 0.9em;
+            border: 1px solid #dee2e6;
+        }
+        .upload-options .btn-primary {
+            background-color: var(--utng-purple);
+            border-color: var(--utng-purple);
+        }
+        .drop-zone {
+            border: 2px dashed #adb5bd;
+            border-radius: 5px;
+            padding: 30px 20px;
+            text-align: center;
+            color: #6c757d;
+            background-color: #fcfcfc;
+            margin-top: 10px;
+        }
+        .drop-zone i {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        .upload-info {
+            font-size: 0.8em;
+            color: #6c757d;
+            margin-top: 5px;
+        }
+
+        /* Botones de Acción */
+        .btn-primary {
+            background-color: var(--utng-blue) !important;
+            border-color: var(--utng-blue) !important;
+        }
+        .btn-secondary {
+            background-color: #6c757d !important;
+            border-color: #6c757d !important;
+        }
+
+        /* Elementos extra de layout */
+        .expand-link {
+            position: absolute;
+            top: 120px;
+            right: 30px;
+            font-size: 0.9em;
+            color: var(--info-blue);
+            text-decoration: none;
+        }
+        .help-circle {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            background-color: #adb5bd;
+            color: white;
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.1em;
+            cursor: help;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="profile-container">
+        
+        <div class="form-header">
+            <a href="#" class="me-2">Preferencias</a>
+            <span class="text-secondary">•</span>
+            <a href="#" class="ms-2">Editar perfil</a>
+        </div>
+        
+        <h1 class="fs-4 mb-1">Oswaldo Ibarra Cárdenas</h1>
+        <h2 class="fs-5 mb-4 text-muted">Oswaldo Ibarra Cárdenas</h2>
+
+        <a href="#" class="expand-link">Expandir todo</a>
+        <div class="help-circle d-none d-lg-flex">?</div>
+
+        <div class="accordion" id="profileAccordion">
+            
+            <h3 class="section-title" data-bs-toggle="collapse" data-bs-target="#collapseGeneral" aria-expanded="true" aria-controls="collapseGeneral">
+                <i class="bi bi-chevron-down"></i> General
+            </h3>
+            
+            <div id="collapseGeneral" class="accordion-collapse collapse show" data-bs-parent="#profileAccordion">
+                
+                <form class="py-2">
+                    <div class="field-row">
+                        <label for="nombre" class="field-label">Nombre</label>
+                        <div class="field-input-wrapper">
+                            <input type="text" class="form-control" id="nombre" value="Oswaldo">
+                            <i class="bi bi-x-circle-fill required-icon"></i>
+                            <i class="bi bi-question-circle-fill info-icon"></i>
+                        </div>
+                    </div>
+
+                    <div class="field-row">
+                        <label for="apellidos" class="field-label">Apellido(s)</label>
+                        <div class="field-input-wrapper">
+                            <input type="text" class="form-control" id="apellidos" value="Ibarra Cárdenas">
+                            <i class="bi bi-x-circle-fill required-icon"></i>
+                            <i class="bi bi-question-circle-fill info-icon"></i>
+                        </div>
+                    </div>
+
+                    <div class="field-row">
+                        <label for="email" class="field-label">Dirección Email</label>
+                        <div class="field-input-wrapper">
+                            <input type="email" class="form-control" id="email" value="1224100506.oic@gmail.com">
+                            <i class="bi bi-x-circle-fill required-icon"></i>
+                            <i class="bi bi-question-circle-fill info-icon"></i>
+                        </div>
+                    </div>
+
+                    <div class="field-row align-items-baseline">
+                        <label class="field-label">Visibilidad de Email</label>
+                        <div class="field-input-wrapper">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="emailVisibility" id="visible" checked>
+                                <label class="form-check-label" for="visible">Visible a participantes del curso</label>
+                            </div>
+                            <i class="bi bi-question-circle-fill info-icon"></i>
+                        </div>
+                    </div>
+
+                    <div class="field-row">
+                        <label for="moodleId" class="field-label">ID de perfil MoodleNet</label>
+                        <div class="field-input-wrapper">
+                            <input type="text" class="form-control" id="moodleId" value="">
+                            <i class="bi bi-question-circle-fill info-icon"></i>
+                        </div>
+                    </div>
+
+                    <div class="field-row">
+                        <label for="ciudad" class="field-label">Ciudad</label>
+                        <div class="field-input-wrapper">
+                            <input type="text" class="form-control" id="ciudad" value="Dolores Hidalgo, Guanajuato">
+                        </div>
+                    </div>
+
+                    <div class="field-row">
+                        <label for="pais" class="field-label">Seleccione su país</label>
+                        <div class="field-input-wrapper">
+                            <select class="form-select" id="pais">
+                                <option value="mexico" selected>México</option>
+                                <option value="usa">Estados Unidos</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="field-row">
+                        <label for="zonaHoraria" class="field-label">Zona horaria</label>
+                        <div class="field-input-wrapper">
+                            <select class="form-select" id="zonaHoraria">
+                                <option value="chihuahua" selected>América/Chihuahua</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="field-row align-items-start">
+                        <label for="descripcion" class="field-label pt-2">Descripción</label>
+                        <div class="field-input-wrapper flex-column align-items-stretch">
+                            <i class="bi bi-pencil-fill info-icon ms-0 mb-2 align-self-start"></i>
+                            <div class="editor-container">
+                                <div class="editor-toolbar">
+                                    <button title="Negrita"><b>B</b></button>
+                                    <button title="Itálica"><i>I</i></button>
+                                    <button title="Subrayado"><u>U</u></button>
+                                    <button title="Lista Desordenada"><i class="bi bi-list-ul"></i></button>
+                                    <button title="Lista Ordenada"><i class="bi bi-list-ol"></i></button>
+                                    <button title="Enlace"><i class="bi bi-link-45deg"></i></button>
+                                    <button title="Imagen"><i class="bi bi-image"></i></button>
+                                </div>
+                                <textarea class="editor-textarea" id="descripcion"></textarea>
+                                <div class="editor-footer">
+                                    0 palabras. Build with TinyMCE
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+            
+            <h3 class="section-title" data-bs-toggle="collapse" data-bs-target="#collapseImagen" aria-expanded="true" aria-controls="collapseImagen">
+                <i class="bi bi-chevron-down"></i> Imagen del usuario
+            </h3>
+            
+            <div id="collapseImagen" class="accordion-collapse collapse show" data-bs-parent="#profileAccordion">
+                <form class="py-2">
+                    <div class="field-row align-items-center">
+                        <label class="field-label">Imagen actual</label>
+                        <div class="field-input-wrapper current-image-area">
+                            <img src="https://via.placeholder.com/60/FF5733/FFFFFF?text=OI" alt="Imagen de perfil">
+                            <button type="button" class="btn btn-sm btn-danger">Eliminar</button>
+                        </div>
+                    </div>
+                    
+                    <div class="field-row align-items-start">
+                        <label class="field-label pt-2">Imagen nueva</label>
+                        <div class="field-input-wrapper flex-column align-items-stretch">
+                            <i class="bi bi-info-circle-fill info-icon ms-0 mb-2 align-self-start"></i>
+
+                            <div class="upload-options d-flex justify-content-end mb-2">
+                                <button type="button" class="btn btn-sm btn-outline-secondary active me-1">Archivos</button>
+                                <button type="button" class="btn btn-sm btn-primary">Subir</button>
+                            </div>
+                            
+                            <div class="drop-zone">
+                                <i class="bi bi-cloud-arrow-down"></i>
+                                <p class="mb-0">Arrastre y suelte los archivos aquí para subirlos</p>
+                            </div>
+
+                            <div class="upload-info text-end">
+                                <p class="mb-0">Tamaño máximo para archivos: 5 MB, número máximo de archivos: 1</p>
+                                <p class="mb-0">Tipos de archivos aceptados: Archivos de imágenes a ser optimizados, como por ejemplo insignias: gif, jpg, jpeg, png</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="field-row">
+                        <label for="imagenDescripcion" class="field-label">Descripción de la imagen</label>
+                        <div class="field-input-wrapper">
+                            <input type="text" class="form-control" id="imagenDescripcion">
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <h3 class="section-title collapsed" data-bs-toggle="collapse" data-bs-target="#collapseNombres" aria-expanded="false" aria-controls="collapseNombres">
+                <i class="bi bi-chevron-right"></i> Nombres adicionales
+            </h3>
+            <div id="collapseNombres" class="accordion-collapse collapse"></div>
+
+            <h3 class="section-title collapsed" data-bs-toggle="collapse" data-bs-target="#collapseIntereses" aria-expanded="false" aria-controls="collapseIntereses">
+                <i class="bi bi-chevron-right"></i> Intereses
+            </h3>
+            <div id="collapseIntereses" class="accordion-collapse collapse"></div>
+
+            <h3 class="section-title collapsed" data-bs-toggle="collapse" data-bs-target="#collapseOpcional" aria-expanded="false" aria-controls="collapseOpcional">
+                <i class="bi bi-chevron-right"></i> Opcional
+            </h3>
+            <div id="collapseOpcional" class="accordion-collapse collapse"></div>
+
+            <div class="d-flex justify-content-start mt-4 pt-3 border-top">
+                <button type="submit" class="btn btn-primary me-2">Actualizar información personal</button>
+                <button type="button" class="btn btn-secondary">Cancelar</button>
+            </div>
+
+            <div class="text-danger mt-3">
+                <i class="bi bi-x-octagon-fill"></i> Requerido
+            </div>
+
+        </div> </div> <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

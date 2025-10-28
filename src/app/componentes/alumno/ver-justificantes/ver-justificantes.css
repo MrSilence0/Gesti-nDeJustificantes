@@ -1,0 +1,82 @@
+:root {
+  --utng-dark-blue: #043c7b;
+  --utng-purple: #7c4dff;
+  --utng-active-green: #00a896;
+  --utng-light-gray: #f8f9fa;
+  --utng-view-btn: #1e5fae;
+  --utng-send-btn: #ff9c33;
+}
+
+/* General */
+body {
+  background-color: var(--utng-light-gray);
+}
+
+/* NAVBAR */
+.custom-navbar-bg {
+  background-color: var(--utng-dark-blue);
+}
+
+.custom-user-icon {
+  color: white;
+  cursor: pointer;
+}
+
+.custom-main-content {
+  margin-top: 60px;
+  background-color: var(--utng-light-gray);
+}
+
+/* BARRAS DE COLOR */
+.custom-purple-bar {
+  background-color: var(--utng-purple);
+  color: white;
+  padding: 0.5rem 1rem;
+}
+
+.active-option-bar {
+  background-color: var(--utng-active-green);
+  color: white;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+}
+
+/* TABLA */
+.custom-table-header th {
+  background-color: var(--utng-dark-blue);
+  color: white;
+}
+
+/* BOTONES */
+.custom-btn-view {
+  background-color: var(--utng-view-btn);
+  color: white;
+  font-weight: 500;
+}
+
+.custom-btn-view:hover {
+  background-color: #174c8a;
+  color: white;
+}
+
+.custom-btn-send {
+  background-color: var(--utng-send-btn);
+  color: white;
+  font-weight: 500;
+}
+
+.custom-btn-send:hover {
+  background-color: #e2872c;
+  color: white;
+}
+
+/* MODAL */
+.custom-modal-header {
+  background-color: var(--utng-dark-blue);
+  color: white;
+}
+
+/* FOOTER */
+footer {
+  margin-top: 30px;
+}
