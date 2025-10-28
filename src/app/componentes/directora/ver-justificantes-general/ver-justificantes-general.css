@@ -1,0 +1,174 @@
+:root {
+    --utng-dark-blue: #043c7b; /* Navbar principal */
+    --utng-purple: #7c4dff; /* Barra de Procesos */
+    --utng-active-green: #00a896; /* Opción activa - Verde/Teal */
+    --utng-pending-header: #5bc0de; /* Azul de Pendientes (similar a bootstrap info) */
+    --utng-accepted-header: #5cb85c; /* Verde de Aceptadas (similar a bootstrap success) */
+    --utng-rejected-header: #d9534f; /* Rojo de Rechazadas (similar a bootstrap danger) */
+    --utng-ver-btn-pending: #2ecc71; /* Botón 'Ver solicitud' (verde claro) */
+    --utng-ver-btn-accepted: #1abc9c; /* Botón 'Ver' aceptadas (verde aqua) */
+    --utng-ver-btn-rejected: #3498db; /* Botón 'Ver' rechazadas (azul) */
+    --utng-light-gray: #f8f9fa; /* Fondo general */
+}
+
+body {
+    background-color: var(--utng-light-gray);
+}
+.custom-navbar-bg {
+    background-color: var(--utng-dark-blue);
+    padding-top: 5px;
+    padding-bottom: 5px;
+    z-index: 1030; 
+}
+
+.custom-user-icon {
+    color: white; 
+    cursor: pointer;
+}
+
+.custom-main-content {
+    margin-top: 60px; 
+    background-color: var(--utng-light-gray);
+    padding: 0 !important;
+}
+
+.custom-purple-bar {
+    background-color: var(--utng-purple);
+    padding: 0.5rem 1rem; 
+    color: white;
+    width: 100%;
+}
+
+.custom-link-dropdown {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    color: white;
+    font-size: 1.25rem; 
+    font-weight: 500;
+    cursor: pointer;
+    text-align: left;
+    display: inline-flex; 
+    align-items: center;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+.active-option-bar {
+    background-color: var(--utng-active-green);
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    text-align: left; 
+    width: 100%;
+}
+
+.custom-btn-search {
+    background-color: var(--utng-active-green);
+    border-color: var(--utng-active-green);
+    color: white;
+    font-weight: 600;
+}
+.custom-btn-search:hover {
+    background-color: #008f7d;
+    border-color: #008f7d;
+    color: white;
+}
+
+.card-status {
+    border-radius: 0.5rem;
+    border: none;
+}
+
+.custom-header-pending {
+    background-color: var(--utng-pending-header) !important;
+    border-color: var(--utng-pending-header) !important;
+    padding: 0.75rem 1rem;
+    border-bottom: 0;
+    border-top-left-radius: calc(0.5rem - 1px);
+    border-top-right-radius: calc(0.5rem - 1px);
+}
+.custom-btn-ver {
+    background-color: var(--utng-ver-btn-pending);
+    border-color: var(--utng-ver-btn-pending);
+    color: white;
+    font-weight: 500;
+    font-size: 0.85rem;
+    padding: 0.25rem 0.5rem;
+    white-space: nowrap;
+}
+.custom-btn-ver:hover {
+    background-color: #27ae60;
+    border-color: #27ae60;
+    color: white;
+}
+
+.custom-header-accepted {
+    background-color: var(--utng-accepted-header) !important;
+    border-color: var(--utng-accepted-header) !important;
+    padding: 0.75rem 1rem;
+    border-bottom: 0;
+    border-top-left-radius: calc(0.5rem - 1px);
+    border-top-right-radius: calc(0.5rem - 1px);
+}
+.custom-btn-aceptadas {
+    background-color: var(--utng-ver-btn-accepted);
+    border-color: var(--utng-ver-btn-accepted);
+    color: white;
+    font-weight: 500;
+    font-size: 0.85rem;
+    padding: 0.25rem 0.5rem;
+    white-space: nowrap;
+}
+.custom-btn-aceptadas:hover {
+    background-color: #16a085;
+    border-color: #16a085;
+    color: white;
+}
+
+.custom-header-rejected {
+    background-color: var(--utng-rejected-header) !important;
+    border-color: var(--utng-rejected-header) !important;
+    padding: 0.75rem 1rem;
+    border-bottom: 0;
+    border-top-left-radius: calc(0.5rem - 1px);
+    border-top-right-radius: calc(0.5rem - 1px);
+}
+.custom-btn-rechazadas {
+    background-color: var(--utng-ver-btn-rejected);
+    border-color: var(--utng-ver-btn-rejected);
+    color: white;
+    font-weight: 500;
+    font-size: 0.85rem;
+    padding: 0.25rem 0.5rem;
+    white-space: nowrap;
+}
+.custom-btn-rechazadas:hover {
+    background-color: #2980b9;
+    border-color: #2980b9;
+    color: white;
+}
+
+.justificante-text {
+    font-size: 0.9rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.custom-modal-header {
+    background-color: var(--utng-dark-blue);
+    color: white;
+    border-bottom: 1px solid var(--utng-dark-blue);
+}
+.custom-btn-cerrar {
+    background-color: #6c757d;
+    border-color: #6c757d;
+    color: white;
+}
+.custom-btn-cerrar:hover {
+    background-color: #5a6268;
+    border-color: #5a6268;
+    color: white;
+}

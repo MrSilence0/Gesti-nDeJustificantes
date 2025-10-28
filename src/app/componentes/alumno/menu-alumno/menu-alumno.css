@@ -1,0 +1,83 @@
+:root {
+    --utng-dark-blue: #043c7b; /* Navbar principal */
+    --utng-purple: #7c4dff; /* Barra de Procesos */
+    --utng-active-green: #00a896; /* Opción activa - Verde/Teal */
+    --utng-light-gray: #f8f9fa; /* Fondo general */
+}
+
+body {
+    background-color: var(--utng-light-gray);
+}
+.custom-navbar-bg {
+    background-color: var(--utng-dark-blue);
+    padding-top: 5px;
+    padding-bottom: 5px;
+    z-index: 1030; 
+}
+
+.custom-user-icon, .custom-notification-icon {
+    color: white; 
+    cursor: pointer;
+}
+
+.custom-main-content {
+    margin-top: 60px; 
+    background-color: var(--utng-light-gray);
+    padding: 0 !important;
+}
+
+.custom-notification-badge {
+    font-size: 0.75rem; 
+    padding: 0.2em 0.4em;
+}
+
+.custom-purple-bar {
+    background-color: var(--utng-purple);
+    padding: 0.5rem 1rem; 
+    color: white;
+    width: 100%;
+}
+
+.custom-link-dropdown {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    color: white;
+    font-size: 1.25rem; 
+    font-weight: 500;
+    cursor: pointer;
+    text-align: left;
+    display: inline-flex; 
+    align-items: center;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+.active-option-bar {
+    background-color: var(--utng-active-green);
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    text-align: left; 
+    width: 100%;
+}
+
+
+.custom-title-card {
+    color: var(--utng-dark-blue);
+    font-weight: 600;
+}
+
+.calendar-container {
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05);
+}
+
+.dropdown-menu .active {
+    background-color: var(--utng-active-green) !important;
+    color: white !important;
+}
