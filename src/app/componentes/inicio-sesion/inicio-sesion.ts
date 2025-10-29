@@ -24,13 +24,11 @@ export class InicioSesionComponent implements OnInit {
 
   currentPhraseIndex = 0;
 
-  // 🚨 El código se ejecuta cuando el componente se inicializa
   ngOnInit(): void {
     this.updateDynamicText(); // Muestra la primera frase inmediatamente
     setInterval(() => this.updateDynamicText(), 5000); // Cambia cada 5 segundos
   }
 
-  // 🚨 Método para manejar la actualización y el efecto de transición
   updateDynamicText(): void {
     const dynamicTextContainer = document.getElementById('dynamicText');
     

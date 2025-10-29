@@ -10,6 +10,15 @@ body {
     font-family: 'Arial', sans-serif;
 }
 
+.main-container {
+        display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    overflow: auto;
+}
+
 .custom-card-registro {
     width: 100%;
     max-width: 500px; 
