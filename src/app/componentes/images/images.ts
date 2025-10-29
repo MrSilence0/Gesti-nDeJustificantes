@@ -1,11 +1,14 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
+
 
 @Component({
   selector: 'app-images',
-  imports: [],
+  standalone: true,
+  imports: [RouterLink],
   templateUrl: './images.html',
-  styleUrl: './images.css'
+  styleUrls: ['./images.css']
 })
-export class Images {
+export class ImagesComponent {
 
 }

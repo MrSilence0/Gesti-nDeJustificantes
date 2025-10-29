@@ -1,97 +1,7 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sistema de Justificantes - Área TI | Ver Justificantes</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  <style>
-    body {
-      background-color: #f8f9fa;
-    }
-
-    .custom-navbar-bg {
-      background-color: #0d3b66;
-      border-bottom: none;
-    }
-
-    .custom-purple-bar {
-      background-color: #6f42c1;
-      padding: 10px 20px;
-      margin-top: 0; 
-      border-top: none;
-    }
-
-    .custom-main-content {
-      margin-top: 60px;
-    }
-
-    .custom-link-dropdown {
-      background-color: #7a3db8;
-      color: #fff;
-      border: none;
-      border-radius: 8px;
-      padding: 8px 16px;
-      font-weight: 500;
-      transition: all 0.3s ease;
-    }
-
-    .custom-link-dropdown:hover {
-      background-color: #692fa3;
-      color: #fff;
-    }
-
-    .custom-dropdown-menu {
-      background-color: #fff;
-      border-radius: 8px;
-      border: 1px solid #ddd;
-    }
-
-    .active-option-bar {
-      background-color: #009879;
-      color: white;
-      font-weight: 500;
-      padding: 8px 15px;
-    }
-
-    .custom-table-header {
-      background-color: #0d3b66;
-      color: white;
-    }
-
-    .custom-btn-view {
-      background-color: #0d6efd;
-      color: white;
-    }
-
-    .custom-btn-send {
-      background-color: #fd7e14;
-      color: white;
-    }
-
-    .custom-btn-view:hover {
-      background-color: #0b5ed7;
-      color: white;
-    }
-
-    .custom-btn-send:hover {
-      background-color: #e96b0c;
-      color: white;
-    }
-
-    /* Encabezado del modal */
-    .custom-modal-header {
-      background-color: #6f42c1;
-      color: white;
-    }
-  </style>
-</head>
-<body>
-  <nav class="navbar navbar-expand-lg navbar-dark custom-navbar-bg fixed-top">
+<nav class="navbar navbar-expand-lg navbar-dark custom-navbar-bg fixed-top">
     <div class="container-fluid">
-      <a class="navbar-brand me-4" href="#">
-        <img src="Universidad_Tecnológica_del_Norte_de_Guanajuato_(UTNG).png" alt="Logo Universidad" height="50">
+      <a class="navbar-brand me-4" routerLink="/home">
+        <img src="/images/LogoUtng.png" alt="Logo Universidad" height="50">
       </a>
 
       <div class="d-flex flex-column text-white">
@@ -100,33 +10,58 @@
       </div>
 
       <div class="ms-auto d-flex align-items-center">
-        <div class="dropdown">
-          <span class="text-white me-2">User Name</span>
-          <button class="btn dropdown-toggle p-0" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="userDropdown">
-            <i class="bi bi-person-circle fs-2 custom-user-icon"></i>
-          </button>
-          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
-            <li><a class="dropdown-item" href="#">Perfil</a></li>
-            <li><a class="dropdown-item" href="#">Cerrar Sesión</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </nav>
+        
+         <div class="dropdown me-3" ngbDropdown>
+                <button class="btn p-0 position-relative" type="button" ngbDropdownToggle id="notificacionesDropdown">
+                    <i class="bi bi-bell-fill fs-3 custom-notification-icon"></i>
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger custom-notification-badge">
+                        3
+                        <span class="visually-hidden">Notificaciones no leídas</span>
+                    </span>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="notificacionesDropdown" ngbDropdownMenu>
+                    <li><h6 class="dropdown-header">Notificaciones</h6></li>
+                    <li><a class="dropdown-item" href="#">Tienes 2 solicitudes pendientes.</a></li>
+                    <li><a class="dropdown-item" href="#">Se ha subido un nuevo justificante.</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item text-center text-primary" href="#">Ver todas las Notificaciones</a></li> 
+                </ul>
+            </div>
 
-  <div class="container-fluid custom-main-content p-0">
-    <div class="row g-0">
-      <div class="col-12 custom-purple-bar">
-        <div class="dropdown">
-          <button class="custom-link-dropdown dropdown-toggle" type="button" data-bs-toggle="dropdown">
-            <i class="bi bi-chevron-down-fill me-2"></i> Procesos
-          </button>
-          <ul class="dropdown-menu custom-dropdown-menu">
-            <li><a class="dropdown-item active" href="#">Ver Justificantes</a></li>
-            <li><a class="dropdown-item" href="#">Aprobar/Rechazar Solicitudes</a></li>
-          </ul>
+            <div class="dropdown" ngbDropdown>
+                <span class="text-white me-2">User Name</span>
+                
+                <button class="btn dropdown-toggle p-0" type="button" ngbDropdownToggle id="userDropdown">
+                    <i class="bi bi-person-circle fs-2 custom-user-icon"></i>
+                </button>
+                
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown" ngbDropdownMenu>
+                    <li><a class="dropdown-item" routerLink="/vistaGeneral">Perfil</a></li>
+                    <li><a class="dropdown-item" routerLink="/inicioSesion">Cerrar Sesión</a></li>
+                </ul>
+            </div>
         </div>
-      </div>
+    </div>
+</nav>
+
+<div class="container-fluid custom-main-content p-0" style="margin-top: 65px;"> 
+    
+    <div class="row g-0">
+        <div class="col-12 custom-purple-bar">
+            <div class="dropdown" ngbDropdown id="procesosDropdownContainer">
+                <button class="custom-link-dropdown dropdown-toggle" type="button" ngbDropdownToggle>
+                    <i class="bi bi-chevron-down-fill me-2"></i> Procesos
+                </button>
+                
+                <ul class="dropdown-menu custom-dropdown-menu" aria-labelledby="procesosDropdown" ngbDropdownMenu>
+                    <li><a class="dropdown-item" routerLink="/menuAlumno">Menú</a></li>
+                    <li><a class="dropdown-item" routerLink="/solicitarJustificante">Solicitar justificante</a></li>
+                    <li><a class="dropdown-item" routerLink="/verJustificantes">Ver Justificantes</a></li>
+                    <li><a class="dropdown-item" routerLink="/actualizarJustificante">Actualizar Justificante</a></li>
+                    <li><a class="dropdown-item" routerLink="/cancelarJustificantes">Cancelar Justificante</a></li>
+                </ul>
+            </div>
+        </div>
     </div>
 
     <div class="row g-0">
@@ -168,7 +103,7 @@
                   </td>
                 </tr>
                 <tr>
-                  <td>Carlos Pérez</td>
+                  <td>Ana López</td>
                   <td>10/10/2025</td>
                   <td>Trámite escolar</td>
                   <td><span class="badge bg-warning text-dark">Pendiente</span></td>
@@ -182,7 +117,7 @@
                   </td>
                 </tr>
                 <tr>
-                  <td>Lucía Torres</td>
+                  <td>Ana López</td>
                   <td>05/10/2025</td>
                   <td>Motivo personal</td>
                   <td><span class="badge bg-danger">Rechazado</span></td>
@@ -222,7 +157,3 @@
       </div>
     </div>
   </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>

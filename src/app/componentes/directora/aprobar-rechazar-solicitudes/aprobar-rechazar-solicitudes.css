@@ -1,16 +1,3 @@
-:root {
-    --utng-dark-blue: #043c7b; /* Navbar principal */
-    --utng-purple: #7c4dff; /* Barra de Procesos */
-    --utng-active-green: #00a896; /* Opción activa - Verde/Teal */
-    --utng-actualizar-btn: #4CAF50; /* Botón Actualizar (Verde) */
-    --utng-download-btn: #17a2b8; /* Botón Descargar (Cian/Info) */
-    --utng-light-gray: #f8f9fa; /* Fondo general */
-    --utng-error-red: #dc3545; /* Rojo de error */
-}
-
-body {
-    background-color: var(--utng-light-gray);
-}
 .custom-navbar-bg {
     background-color: var(--utng-dark-blue);
     padding-top: 5px;
@@ -18,7 +5,7 @@ body {
     z-index: 1030; 
 }
 
-.custom-user-icon {
+.custom-user-icon, .custom-notification-icon {
     color: white; 
     cursor: pointer;
 }

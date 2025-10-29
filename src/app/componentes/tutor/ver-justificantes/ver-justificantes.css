@@ -21,7 +21,7 @@ body {
     z-index: 1030; 
 }
 
-.custom-user-icon {
+.custom-user-icon, .custom-notification-icon {
     color: white; 
     cursor: pointer;
 }

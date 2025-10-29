@@ -1,11 +1,14 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-menu-tutor',
-  imports: [],
+  standalone: true,
+  imports: [RouterLink, NgbDropdownModule],
   templateUrl: './menu-tutor.html',
-  styleUrl: './menu-tutor.css'
+  styleUrls: ['./menu-tutor.css']
 })
-export class MenuTutor {
+export class MenuTutorComponent {
 
 }

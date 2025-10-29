@@ -1,12 +1,3 @@
-:root {
-    --utng-dark-blue: #043c7b; /* Navbar principal */
-    --utng-purple: #7c4dff; /* Barra de Procesos */
-    --utng-active-green: #00a896; /* Opción activa */
-    --utng-form-send-btn: #5bc0de; /* Botón Enviar (Turquesa) */
-    --utng-form-clear-btn: #ffc107; /* Botón Limpiar (Amarillo) */
-    --utng-light-gray: #f8f9fa; /* Fondo general */
-}
-
 .custom-navbar-bg {
     background-color: var(--utng-dark-blue);
     padding-top: 5px;

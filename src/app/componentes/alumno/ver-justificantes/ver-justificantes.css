@@ -1,23 +1,9 @@
-:root {
-  --utng-dark-blue: #043c7b;
-  --utng-purple: #7c4dff;
-  --utng-active-green: #00a896;
-  --utng-light-gray: #f8f9fa;
-  --utng-view-btn: #1e5fae;
-  --utng-send-btn: #ff9c33;
-}
 
-/* General */
-body {
-  background-color: var(--utng-light-gray);
-}
-
-/* NAVBAR */
 .custom-navbar-bg {
   background-color: var(--utng-dark-blue);
 }
 
-.custom-user-icon {
+.custom-user-icon, .custom-notification-icon {
   color: white;
   cursor: pointer;
 }
@@ -27,7 +13,6 @@ body {
   background-color: var(--utng-light-gray);
 }
 
-/* BARRAS DE COLOR */
 .custom-purple-bar {
   background-color: var(--utng-purple);
   color: white;
@@ -41,13 +26,11 @@ body {
   padding: 0.5rem 1rem;
 }
 
-/* TABLA */
 .custom-table-header th {
   background-color: var(--utng-dark-blue);
   color: white;
 }
 
-/* BOTONES */
 .custom-btn-view {
   background-color: var(--utng-view-btn);
   color: white;
@@ -70,13 +53,85 @@ body {
   color: white;
 }
 
-/* MODAL */
 .custom-modal-header {
   background-color: var(--utng-dark-blue);
   color: white;
 }
 
-/* FOOTER */
 footer {
   margin-top: 30px;
 }
+
+.custom-navbar-bg {
+      background-color: #0d3b66;
+      border-bottom: none;
+    }
+
+    .custom-purple-bar {
+      background-color: #6f42c1;
+      padding: 10px 20px;
+      margin-top: 0;
+      border-top: none;
+    }
+
+    .custom-main-content {
+      margin-top: 60px;
+    }
+
+    .custom-link-dropdown {
+      background-color: #6f42c1;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 8px 16px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .custom-link-dropdown:hover {
+      background-color: #6f42c1;
+      color: #fff;
+    }
+
+    .custom-dropdown-menu {
+      background-color: #fff;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+    }
+
+    .active-option-bar {
+      background-color: #009879;
+      color: white;
+      font-weight: 500;
+      padding: 8px 15px;
+    }
+
+    .custom-table-header {
+      background-color: #0d3b66;
+      color: white;
+    }
+
+    .custom-btn-view {
+      background-color: #0d6efd;
+      color: white;
+    }
+
+    .custom-btn-send {
+      background-color: #fd7e14;
+      color: white;
+    }
+
+    .custom-btn-view:hover {
+      background-color: #0b5ed7;
+      color: white;
+    }
+
+    .custom-btn-send:hover {
+      background-color: #e96b0c;
+      color: white;
+    }
+
+    .custom-modal-header {
+      background-color: #6f42c1;
+      color: white;
+    }

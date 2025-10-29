@@ -1,11 +1,14 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap'; 
 
 @Component({
   selector: 'app-ver-justificantes',
-  imports: [],
+  standalone: true,
+  imports: [RouterLink, NgbDropdownModule],
   templateUrl: './ver-justificantes.html',
-  styleUrl: './ver-justificantes.css'
+  styleUrls: ['./ver-justificantes.css']
 })
-export class VerJustificantes {
+export class VerJustificantesComponent {
 
 }

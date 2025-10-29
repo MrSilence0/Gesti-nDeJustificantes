@@ -1,15 +1,5 @@
-:root {
-    --utng-dark-blue: #043c7b; /* Navbar principal */
-    --utng-purple: #7c4dff; /* Barra de Procesos */
-    --utng-active-green: #00a896; /* Opción activa - Verde/Teal */
-    --utng-light-gray: #f8f9fa; /* Fondo general */
-}
-
-body {
-    background-color: var(--utng-light-gray);
-}
 .custom-navbar-bg {
-    background-color: var(--utng-dark-blue);
+    background-color: #043c7b;
     padding-top: 5px;
     padding-bottom: 5px;
     z-index: 1030; 

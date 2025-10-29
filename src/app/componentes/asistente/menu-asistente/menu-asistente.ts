@@ -1,11 +1,14 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap'; 
 
 @Component({
   selector: 'app-menu-asistente',
-  imports: [],
+  standalone: true,
+  imports: [RouterLink, NgbDropdownModule],
   templateUrl: './menu-asistente.html',
-  styleUrl: './menu-asistente.css'
+  styleUrls: ['./menu-asistente.css']
 })
-export class MenuAsistente {
+export class MenuAsistenteComponent {
 
 }

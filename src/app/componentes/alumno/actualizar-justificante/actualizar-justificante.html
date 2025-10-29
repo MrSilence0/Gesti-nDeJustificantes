@@ -1,397 +1,359 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema de Justificantes - Área TI</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    
-    <link rel="stylesheet" href="actualizar-justificante.css">
+<nav class="navbar navbar-expand-lg navbar-dark custom-navbar-bg fixed-top">
+    <div class="container-fluid">
+        <a class="navbar-brand me-4" routerLink="/home"> 
+            <img src="/images/LogoUtng.png" alt="Logo Universidad" height="50">
+        </a>
 
-</head>
-<body>
-
-    <nav class="navbar navbar-expand-lg navbar-dark custom-navbar-bg fixed-top">
-        <div class="container-fluid">
-            <a class="navbar-brand me-4" href="#">
-                <img src="/src/app/componentes/images/LogoUtng.png" alt="Logo Universidad" height="50">
-            </a>
-
-            <div class="d-flex flex-column text-white">
-                <h1 class="fs-4 mb-0">SISTEMA DE JUSTIFICANTES</h1>
-                <h2 class="fs-5 mb-0">- ÁREA TI</h2>
-            </div>
-
-            <div class="ms-auto d-flex align-items-center">
-                <div class="dropdown">
-                    <span class="text-white me-2">User Name</span>
-                    
-                    <button class="btn dropdown-toggle p-0" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="userDropdown">
-                        <i class="bi bi-person-circle fs-2 custom-user-icon"></i>
-                    </button>
-                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
-                        <li><a class="dropdown-item" href="/src/app/componentes/perfil/vista-general/vista-general.html">Perfil</a></li>
-                        <li><a class="dropdown-item" href="/src/app/componentes/inicio-sesion/inicio-sesion.html">Cerrar Sesión</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <div class="container-fluid custom-main-content p-0">
-        
-        <div class="row g-0">
-            <div class="col-12 custom-purple-bar">
-                <div class="dropdown" id="procesosDropdownContainer">
-                    <button class="custom-link-dropdown dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="bi bi-chevron-down-fill me-2"></i> Procesos
-                    </button>
-                    
-                    <ul class="dropdown-menu custom-dropdown-menu" aria-labelledby="procesosDropdown">
-                        <li><a class="dropdown-item" href="/src/app/componentes/alumno/menu-alumno/menu-alumno.html">Menú</a></li>
-                        <li><a class="dropdown-item" href="/src/app/componentes/alumno/solicitar-justificante/solicitar-justificante.html">Solicitar Justificante</a></li>
-                        <li><a class="dropdown-item" href="/src/app/componentes/alumno/actualizar-justificante/actualizar-justificante.html">Actualizar Datos Justificante</a></li>
-                        <li><a class="dropdown-item" href="/src/app/componentes/alumno/cancelar-justificantes/cancelar-justificantes.html">Cancelar Justificante</a></li>
-                        <li><a class="dropdown-item" href="/src/app/componentes/alumno/ver-justificantes/ver-justificantes.html">Ver Justificantes Solicitados</a></li>
-                    </ul>
-                </div>
-            </div>
+        <div class="d-flex flex-column text-white">
+            <h1 class="fs-4 mb-0">SISTEMA DE JUSTIFICANTES</h1>
+            <h2 class="fs-5 mb-0">- ÁREA TI</h2>
         </div>
 
-        <div class="row g-0">
-            <div class="col-12 active-option-bar">
-                Actualizar datos
-            </div>
-        </div>
-        
-        <div class="container">
-            <div class="row py-4">
+        <div class="ms-auto d-flex align-items-center">
+            <div class="dropdown" ngbDropdown>
+                <span class="text-white me-2">User Name</span>
                 
-                <div class="col-lg-6 mb-4">
-                    <form id="justificanteForm" novalidate> 
-                        <h5 class="mb-4">Detalles del Justificante</h5>
+                <button class="btn dropdown-toggle p-0" type="button" ngbDropdownToggle id="userDropdown">
+                    <i class="bi bi-person-circle fs-2 custom-user-icon"></i>
+                </button>
+                
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown" ngbDropdownMenu>
+                    <li><a class="dropdown-item" routerLink="/vistaGeneral">Perfil</a></li>
+                    <li><a class="dropdown-item" routerLink="/inicioSesion">Cerrar Sesión</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
 
-                        <div class="row mb-3 align-items-center">
-                            <label for="noControl" class="col-sm-4 col-form-label text-end">No. Control:</label>
-                            <div class="col-sm-8">
-                                <input type="text" class="form-control" id="noControl" readonly required> 
-                            </div>
-                        </div>
+<div class="container-fluid custom-main-content p-0">
+    
+    <div class="row g-0">
+        <div class="col-12 custom-purple-bar">
+            <div class="dropdown" id="procesosDropdownContainer" ngbDropdown>
+                <button class="custom-link-dropdown dropdown-toggle" type="button" ngbDropdownToggle>
+                    <i class="bi bi-chevron-down-fill me-2"></i> Procesos
+                </button>
+                
+                <ul class="dropdown-menu custom-dropdown-menu" aria-labelledby="procesosDropdown" ngbDropdownMenu>
+                    <li><a class="dropdown-item" routerLink="/menuAlumno">Menú</a></li>
+                    <li><a class="dropdown-item" routerLink="/solicitarJustificante">Solicitar Justificante</a></li>
+                    <li><a class="dropdown-item active" routerLink="/actualizarJustificante">Actualizar Datos Justificante</a></li>
+                    <li><a class="dropdown-item" routerLink="/cancelarJustificantes">Cancelar Justificante</a></li>
+                    <li><a class="dropdown-item" routerLink="/verJustificantes">Ver Justificantes Solicitados</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
-                        <div class="row mb-3 align-items-center">
-                            <label for="cuatrimestre" class="col-sm-4 col-form-label text-end">Cuatrimestre:</label>
-                            <div class="col-sm-8">
-                                <select class="form-select" id="cuatrimestre" required>
-                                    <option value="" selected disabled>SELECCIONA UNA OPCIÓN</option>
-                                    <option>ENERO-ABRIL</option>
-                                    <option>MAYO-AGOSTO</option>
-                                    <option>SEPTIEMBRE-DICIEMBRE</option>
-                                </select>
-                            </div>
-                        </div>
+    <div class="row g-0">
+        <div class="col-12 active-option-bar">
+            Actualizar datos
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="row py-4">
+            
+            <div class="col-lg-6 mb-4">
+                <form id="justificanteForm" novalidate> 
+                    <h5 class="mb-4">Detalles del Justificante</h5>
 
-                        <div class="row mb-3 align-items-center">
-                            <label for="grupo" class="col-sm-4 col-form-label text-end">Grupo:</label>
-                            <div class="col-sm-3">
-                                <select class="form-select" id="grupo" required>
-                                    <option value="" selected disabled>SELECCIONA UNA OPCIÓN</option>
-                                    <option>GTI0131</option>
-                                    <option>GTI0132</option>
-                                </select>
-                            </div>
-                            <label for="motivo" class="col-sm-2 col-form-label text-end">Motivo:</label>
-                            <div class="col-sm-3">
-                                <select class="form-select" id="motivo" required>
-                                    <option value="" selected disabled>SELECCIONA UNA OPCIÓN</option>
-                                    <option>PERSONAL</option>
-                                    <option>MÉDICO</option>
-                                    <option>ACADÉMICO</option>
-                                    <option value="OTRO">OTRO</option>
-                                </select>
-                            </div>
+                    <div class="row mb-3 align-items-center">
+                        <label for="noControl" class="col-sm-4 col-form-label text-end">No. Control:</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="noControl" readonly required> 
                         </div>
+                    </div>
 
-                        <div class="row mb-3 align-items-center" id="otroMotivoRow" style="display: none;">
-                            <label for="otroMotivo" class="col-sm-4 col-form-label text-end">Especificar Otro:</label>
-                            <div class="col-sm-8">
-                                <input type="text" class="form-control" id="otroMotivo" placeholder="Especifique el motivo">
-                            </div>
+                    <div class="row mb-3 align-items-center">
+                        <label for="cuatrimestre" class="col-sm-4 col-form-label text-end">Cuatrimestre:</label>
+                        <div class="col-sm-8">
+                            <select class="form-select" id="cuatrimestre" required>
+                                <option value="" selected disabled>SELECCIONA UNA OPCIÓN</option>
+                                <option>ENERO-ABRIL</option>
+                                <option>MAYO-AGOSTO</option>
+                                <option>SEPTIEMBRE-DICIEMBRE</option>
+                            </select>
                         </div>
+                    </div>
 
-                        <div class="row mb-3 align-items-center">
-                            <label for="fechaSolicitud" class="col-sm-4 col-form-label text-end">Fecha de la Solicitud:</label>
-                            <div class="col-sm-8">
-                                <input type="date" class="form-control" id="fechaSolicitud" required> 
-                            </div>
+                    <div class="row mb-3 align-items-center">
+                        <label for="grupo" class="col-sm-4 col-form-label text-end">Grupo:</label>
+                        <div class="col-sm-3">
+                            <select class="form-select" id="grupo" required>
+                                <option value="" selected disabled>SELECCIONA UNA OPCIÓN</option>
+                                <option>GTI0131</option>
+                                <option>GTI0132</option>
+                            </select>
                         </div>
+                        <label for="motivo" class="col-sm-2 col-form-label text-end">Motivo:</label>
+                        <div class="col-sm-3">
+                            <select class="form-select" id="motivo" required>
+                                <option value="" selected disabled>SELECCIONA UNA OPCIÓN</option>
+                                <option>PERSONAL</option>
+                                <option>MÉDICO</option>
+                                <option>ACADÉMICO</option>
+                                <option value="OTRO">OTRO</option>
+                            </select>
+                        </div>
+                    </div>
 
-                        <div class="row mb-3 align-items-center">
-                            <label for="fechaInasistencia" class="col-sm-4 col-form-label text-end">Fecha de la Inasistencia:</label>
-                            <div class="col-sm-8">
-                                <input type="date" class="form-control" id="fechaInasistencia" required>
-                            </div>
+                    <div class="row mb-3 align-items-center" id="otroMotivoRow" style="display: none;">
+                        <label for="otroMotivo" class="col-sm-4 col-form-label text-end">Especificar Otro:</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="otroMotivo" placeholder="Especifique el motivo">
                         </div>
+                    </div>
 
-                        <div class="row mb-3 align-items-center">
-                            <label for="diaSemana" class="col-sm-4 col-form-label text-end">Día de la Inasistencia:</label>
-                            <div class="col-sm-8">
-                                <select class="form-select" id="diaSemana" required>
-                                    <option value="" selected disabled>SELECCIONA UNA OPCIÓN</option>
-                                    <option>LUNES</option>
-                                    <option>MARTES</option>
-                                    <option>MIÉRCOLES</option>
-                                    <option>JUEVES</option>
-                                    <option>VIERNES</option>
-                                </select>
-                            </div>
+                    <div class="row mb-3 align-items-center">
+                        <label for="fechaSolicitud" class="col-sm-4 col-form-label text-end">Fecha de la Solicitud:</label>
+                        <div class="col-sm-8">
+                            <input type="date" class="form-control" id="fechaSolicitud" required> 
                         </div>
-                        
-                        <div class="row mb-3 align-items-center">
-                            <label for="tutor" class="col-sm-4 col-form-label text-end">Tutor:</label>
-                            <div class="col-sm-8">
-                                <input type="text" class="form-control" id="tutor" required>
-                            </div>
-                        </div>
+                    </div>
 
-                        <div class="row mb-4">
-                            <label for="documento" class="col-sm-4 col-form-label text-end">Subir Documento:</label>
-                            <div class="col-sm-8">
-                                <input type="file" class="form-control" id="documento" accept=".pdf, .jpg, .png">
-                                <div class="form-text">Recetas médicas, constancias, etc. (PDF, JPG, PNG)</div>
-                            </div>
+                    <div class="row mb-3 align-items-center">
+                        <label for="fechaInasistencia" class="col-sm-4 col-form-label text-end">Fecha de la Inasistencia:</label>
+                        <div class="col-sm-8">
+                            <input type="date" class="form-control" id="fechaInasistencia" required>
                         </div>
+                    </div>
 
-                        <div class="row mt-4">
-                            <div class="col-12 d-flex justify-content-end">
-                                <button type="submit" class="btn custom-btn-enviar me-2">Enviar</button>
-                                <button type="button" id="limpiarFormBtn" class="btn custom-btn-limpiar">Limpiar</button> 
-                            </div>
+                    <div class="row mb-3 align-items-center">
+                        <label for="diaSemana" class="col-sm-4 col-form-label text-end">Día de la Inasistencia:</label>
+                        <div class="col-sm-8">
+                            <select class="form-select" id="diaSemana" required>
+                                <option value="" selected disabled>SELECCIONA UNA OPCIÓN</option>
+                                <option>LUNES</option>
+                                <option>MARTES</option>
+                                <option>MIÉRCOLES</option>
+                                <option>JUEVES</option>
+                                <option>VIERNES</option>
+                            </select>
                         </div>
-                    </form>
-                </div>
+                    </div>
+                    
+                    <div class="row mb-3 align-items-center">
+                        <label for="tutor" class="col-sm-4 col-form-label text-end">Tutor:</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="tutor" required>
+                        </div>
+                    </div>
 
-                <div class="col-lg-6">
-                    <div class="card shadow-sm">
-                        <div class="card-header bg-white">
-                            <h5 class="card-title mb-0">Justificantes Solicitados</h5>
+                    <div class="row mb-4">
+                        <label for="documento" class="col-sm-4 col-form-label text-end">Subir Documento:</label>
+                        <div class="col-sm-8">
+                            <input type="file" class="form-control" id="documento" accept=".pdf, .jpg, .png">
+                            <div class="form-text">Recetas médicas, constancias, etc. (PDF, JPG, PNG)</div>
                         </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-striped table-hover table-bordered" id="justificantesTable">
-                                    <thead class="custom-table-header">
-                                        <tr>
-                                            <th scope="col">Justificante No.</th>
-                                            <th scope="col">Cuatrimestre</th>
-                                            <th scope="col">Grupo</th>
-                                            <th></th> 
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr data-justificante="2024-001" data-control="123456" data-cuatrimestre="ENERO-ABRIL" data-grupo="GTI0131" data-motivo="PERSONAL" data-fecha-solicitud="2024-03-10" data-fecha-inasistencia="2024-03-11" data-dia="LUNES" data-tutor="Prof. García">
-                                            <td>2024-001</td>
-                                            <td>ENERO-ABRIL</td>
-                                            <td>GTI0131</td>
-                                            <td><button class="btn custom-btn-enviar btn-sm obtener-datos">Obtener datos</button></td>
-                                        </tr>
-                                        <tr data-justificante="2024-002" data-control="789012" data-cuatrimestre="ENERO-ABRIL" data-grupo="GTI0132" data-motivo="MÉDICO" data-fecha-solicitud="2024-03-15" data-fecha-inasistencia="2024-03-16" data-dia="MARTES" data-tutor="Prof. López">
-                                            <td>2024-002</td>
-                                            <td>ENERO-ABRIL</td>
-                                            <td>GTI0132</td>
-                                            <td><button class="btn custom-btn-enviar btn-sm obtener-datos">Obtener datos</button></td>
-                                        </tr>
-                                        <tr data-justificante="2024-003" data-control="345678" data-cuatrimestre="ENERO-ABRIL" data-grupo="GTI0131" data-motivo="OTRO" data-otro-motivo="Viaje de estudios" data-fecha-solicitud="2024-03-20" data-fecha-inasistencia="2024-03-21" data-dia="LUNES" data-tutor="Prof. Pérez">
-                                            <td>2024-003</td>
-                                            <td>ENERO-ABRIL</td>
-                                            <td>GTI0131</td>
-                                            <td><button class="btn custom-btn-enviar btn-sm obtener-datos">Obtener datos</button></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
+                    </div>
+
+                    <div class="row mt-4">
+                        <div class="col-12 d-flex justify-content-end">
+                            <button type="submit" class="btn custom-btn-enviar me-2">Enviar</button>
+                            <button type="button" id="limpiarFormBtn" class="btn custom-btn-limpiar">Limpiar</button> 
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-white">
+                        <h5 class="card-title mb-0">Justificantes Solicitados</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-striped table-hover table-bordered" id="justificantesTable">
+                                <thead class="custom-table-header">
+                                    <tr>
+                                        <th scope="col">Justificante No.</th>
+                                        <th scope="col">Cuatrimestre</th>
+                                        <th scope="col">Grupo</th>
+                                        <th></th> 
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr data-justificante="2024-001" data-control="123456" data-cuatrimestre="ENERO-ABRIL" data-grupo="GTI0131" data-motivo="PERSONAL" data-fecha-solicitud="2024-03-10" data-fecha-inasistencia="2024-03-11" data-dia="LUNES" data-tutor="Prof. García">
+                                        <td>2024-001</td>
+                                        <td>ENERO-ABRIL</td>
+                                        <td>GTI0131</td>
+                                        <td><button class="btn custom-btn-enviar btn-sm obtener-datos">Obtener datos</button></td>
+                                    </tr>
+                                    <tr data-justificante="2024-002" data-control="789012" data-cuatrimestre="ENERO-ABRIL" data-grupo="GTI0132" data-motivo="MÉDICO" data-fecha-solicitud="2024-03-15" data-fecha-inasistencia="2024-03-16" data-dia="MARTES" data-tutor="Prof. López">
+                                        <td>2024-002</td>
+                                        <td>ENERO-ABRIL</td>
+                                        <td>GTI0132</td>
+                                        <td><button class="btn custom-btn-enviar btn-sm obtener-datos">Obtener datos</button></td>
+                                    </tr>
+                                    <tr data-justificante="2024-003" data-control="345678" data-cuatrimestre="ENERO-ABRIL" data-grupo="GTI0131" data-motivo="OTRO" data-otro-motivo="Viaje de estudios" data-fecha-solicitud="2024-03-20" data-fecha-inasistencia="2024-03-21" data-dia="LUNES" data-tutor="Prof. Pérez">
+                                        <td>2024-003</td>
+                                        <td>ENERO-ABRIL</td>
+                                        <td>GTI0131</td>
+                                        <td><button class="btn custom-btn-enviar btn-sm obtener-datos">Obtener datos</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        
     </div>
+    
+</div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
-    <div class="modal fade" id="statusModal" tabindex="-1" aria-labelledby="statusModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="statusModalLabel">Estado de la Solicitud</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body" id="statusModalBody">
-            </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-          </div>
+<div class="modal fade" id="statusModal" tabindex="-1" aria-labelledby="statusModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="statusModalLabel">Estado de la Solicitud</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="statusModalBody">
         </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
       </div>
     </div>
+  </div>
+</div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const motivoSelect = document.getElementById('motivo');
-            const otroMotivoRow = document.getElementById('otroMotivoRow');
-            const justificantesTable = document.getElementById('justificantesTable');
-            const form = document.getElementById('justificanteForm');
-            const limpiarFormBtn = document.getElementById('limpiarFormBtn');
-            const statusModal = new bootstrap.Modal(document.getElementById('statusModal'));
-            const statusModalBody = document.getElementById('statusModalBody');
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+
+        const motivoSelect = document.getElementById('motivo');
+        const otroMotivoRow = document.getElementById('otroMotivoRow');
+        const justificantesTable = document.getElementById('justificantesTable');
+        const form = document.getElementById('justificanteForm');
+        const limpiarFormBtn = document.getElementById('limpiarFormBtn');
+        const statusModalElement = document.getElementById('statusModal');
+        const statusModal = new bootstrap.Modal(statusModalElement); // Requiere que la librería de Bootstrap JS esté cargada
+        const statusModalBody = document.getElementById('statusModalBody');
+        
+        const noControlField = document.getElementById('noControl');
+        const documentoField = document.getElementById('documento');
+
+        function showStatusModal(message) {
+            statusModalBody.innerHTML = message;
+            statusModal.show();
+        }
+
+        motivoSelect.addEventListener('change', function() {
+            if (this.value === 'OTRO') {
+                otroMotivoRow.style.display = 'flex'; 
+            } else {
+                otroMotivoRow.style.display = 'none';
+                document.getElementById('otroMotivo').value = ''; 
+            }
+            this.classList.toggle('is-invalid', this.value === "");
+        });
+
+        justificantesTable.addEventListener('click', function(e) {
+            let targetBtn = e.target.closest('.obtener-datos');
+            if (!targetBtn) return; 
+
+            let row = targetBtn.closest('tr');
+            if (row && row.parentNode.tagName === 'TBODY') {
+                
+                justificantesTable.querySelectorAll('tbody tr').forEach(r => r.classList.remove('table-info'));
+                row.classList.add('table-info');
+                
+                noControlField.value = row.dataset.control || '';
+                document.getElementById('cuatrimestre').value = row.dataset.cuatrimestre || '';
+                document.getElementById('grupo').value = row.dataset.grupo || '';
+                document.getElementById('motivo').value = row.dataset.motivo || '';
+                document.getElementById('fechaSolicitud').value = row.dataset.fechaSolicitud || '';
+                document.getElementById('fechaInasistencia').value = row.dataset.fechaInasistencia || '';
+                document.getElementById('diaSemana').value = row.dataset.dia || '';
+                document.getElementById('tutor').value = row.dataset.tutor || '';
+
+                const otroMotivo = row.dataset.otroMotivo;
+                if (row.dataset.motivo === 'OTRO' && otroMotivo) {
+                    otroMotivoRow.style.display = 'flex';
+                    document.getElementById('otroMotivo').value = otroMotivo;
+                } else {
+                    otroMotivoRow.style.display = 'none';
+                    document.getElementById('otroMotivo').value = '';
+                }
+
+                form.querySelectorAll('.form-control, .form-select').forEach(el => {
+                    el.classList.remove('is-invalid');
+                });
+            }
+        });
+        
+        limpiarFormBtn.addEventListener('click', function() {
+            form.reset();
             
-            // **Nuevas referencias de campos**
-            const noControlField = document.getElementById('noControl');
-            const documentoField = document.getElementById('documento');
+            document.getElementById('fechaSolicitud').value = '';
+            document.getElementById('fechaInasistencia').value = '';
 
-            // Función para mostrar el modal de estado
-            function showStatusModal(message, isSuccess = true) {
-                statusModalBody.innerHTML = message;
-                statusModal.show();
+            setTimeout(() => {
+                otroMotivoRow.style.display = 'none';
+                justificantesTable.querySelectorAll('tbody tr').forEach(r => r.classList.remove('table-info'));
+                
+                form.querySelectorAll('.form-control, .form-select').forEach(el => {
+                    el.classList.remove('is-invalid');
+                });
+            }, 10); 
+        });
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault(); 
+            
+            let isFormValid = true;
+            const requiredFields = form.querySelectorAll('[required]');
+            let emptyFieldsCount = 0;
+            let warningMessage = '';
+
+            if (noControlField.value.trim() === '') {
+                noControlField.classList.add('is-invalid');
+                emptyFieldsCount++;
+                isFormValid = false;
+            } else {
+                noControlField.classList.remove('is-invalid');
             }
 
-            // 1. Mostrar/Ocultar el campo "Especificar Otro Motivo" (Lógica mantenida)
-            motivoSelect.addEventListener('change', function() {
-                if (this.value === 'OTRO') {
-                    otroMotivoRow.style.display = 'flex'; 
-                } else {
-                    otroMotivoRow.style.display = 'none';
-                    document.getElementById('otroMotivo').value = ''; 
+            requiredFields.forEach(field => {
+                if (field.id === 'noControl') return; 
+
+                let value = field.value.trim();
+                let isInvalid = false;
+                
+                if (value === '' || value === field.getAttribute('selected')) {
+                    isInvalid = true;
+                    emptyFieldsCount++;
+                } else if (field.id === 'motivo' && field.value === 'OTRO' && document.getElementById('otroMotivo').value.trim() === '') {
+                      isInvalid = true;
+                      emptyFieldsCount++;
                 }
-                this.classList.toggle('is-invalid', this.value === "");
-            });
+                
+                field.classList.toggle('is-invalid', isInvalid);
 
-            // 2. Cargar datos del formulario al hacer clic en la tabla (Lógica mantenida)
-            justificantesTable.addEventListener('click', function(e) {
-                let targetBtn = e.target.closest('.obtener-datos');
-                if (!targetBtn) return; 
-
-                let row = targetBtn.closest('tr');
-                if (row && row.parentNode.tagName === 'TBODY') {
-                    
-                    justificantesTable.querySelectorAll('tbody tr').forEach(r => r.classList.remove('table-info'));
-                    row.classList.add('table-info');
-                    
-                    // Carga de datos, incluyendo las fechas en formato YYYY-MM-DD
-                    noControlField.value = row.dataset.control || ''; // Usa la referencia
-                    document.getElementById('cuatrimestre').value = row.dataset.cuatrimestre || '';
-                    document.getElementById('grupo').value = row.dataset.grupo || '';
-                    document.getElementById('motivo').value = row.dataset.motivo || '';
-                    document.getElementById('fechaSolicitud').value = row.dataset.fechaSolicitud || '';
-                    document.getElementById('fechaInasistencia').value = row.dataset.fechaInasistencia || '';
-                    document.getElementById('diaSemana').value = row.dataset.dia || '';
-                    document.getElementById('tutor').value = row.dataset.tutor || '';
-
-                    const otroMotivo = row.dataset.otroMotivo;
-                    if (row.dataset.motivo === 'OTRO' && otroMotivo) {
-                        otroMotivoRow.style.display = 'flex';
-                        document.getElementById('otroMotivo').value = otroMotivo;
-                    } else {
-                        otroMotivoRow.style.display = 'none';
-                        document.getElementById('otroMotivo').value = '';
-                    }
-
-                    // Limpia cualquier marca de validación previa
-                    form.querySelectorAll('.form-control, .form-select').forEach(el => {
-                        el.classList.remove('is-invalid');
-                    });
+                if (isInvalid) {
+                    isFormValid = false;
                 }
             });
             
-            // 3. Lógica del botón Limpiar (Lógica mantenida)
-            limpiarFormBtn.addEventListener('click', function() {
-                form.reset();
+            if (documentoField.files.length === 0) {
+                warningMessage += '<p class="text-warning mb-0"><i class="bi bi-exclamation-triangle-fill me-2"></i> **Advertencia:** No se subió ningún documento. El justificante puede no ser válido.</p>';
+                documentoField.classList.remove('is-invalid'); 
+            }
+            
+            if (isFormValid) {
+                let successMessage = '<i class="bi bi-check-circle-fill text-success fs-4 me-2"></i> Datos del justificante actualizados con éxito.';
                 
-                document.getElementById('fechaSolicitud').value = '';
-                document.getElementById('fechaInasistencia').value = '';
-
-                setTimeout(() => {
-                    otroMotivoRow.style.display = 'none';
-                    justificantesTable.querySelectorAll('tbody tr').forEach(r => r.classList.remove('table-info'));
-                    
-                    form.querySelectorAll('.form-control, .form-select').forEach(el => {
-                        el.classList.remove('is-invalid');
-                    });
-                }, 10); 
-            });
-
-            // 4. Lógica del botón Enviar/Validación (CORREGIDA)
-            form.addEventListener('submit', function(e) {
-                e.preventDefault(); // Evita el envío por defecto
-                
-                let isFormValid = true;
-                const requiredFields = form.querySelectorAll('[required]');
-                let emptyFieldsCount = 0;
-                let warningMessage = ''; // Para el documento opcional
-
-                // === A) VERIFICACIÓN DE CAMPO NO. CONTROL (CRÍTICO) ===
-                if (noControlField.value.trim() === '') {
-                    noControlField.classList.add('is-invalid');
-                    emptyFieldsCount++;
-                    isFormValid = false;
+                if (warningMessage) {
+                      successMessage += warningMessage;
+                      showStatusModal(successMessage); 
                 } else {
-                    noControlField.classList.remove('is-invalid');
+                      showStatusModal(successMessage);
                 }
-
-                // === B) VALIDACIÓN DE OTROS CAMPOS REQUIRED ===
-                requiredFields.forEach(field => {
-                    // Si ya validamos noControl, lo saltamos aquí
-                    if (field.id === 'noControl') return; 
-
-                    let value = field.value.trim();
-                    let isInvalid = false;
-                    
-                    // Comprobar si está vacío (incluye select con opción disabled, marcado por value="")
-                    if (value === '' || value === field.getAttribute('selected')) {
-                        isInvalid = true;
-                        emptyFieldsCount++;
-                    } else if (field.id === 'motivo' && field.value === 'OTRO' && document.getElementById('otroMotivo').value.trim() === '') {
-                         // Validación especial para "Especificar Otro" cuando el motivo es OTRO
-                         isInvalid = true;
-                         emptyFieldsCount++;
-                    }
-                    
-                    // Marcar/desmarcar como inválido
-                    field.classList.toggle('is-invalid', isInvalid);
-
-                    if (isInvalid) {
-                        isFormValid = false;
-                    }
-                });
-                
-                // === C) VERIFICACIÓN DE DOCUMENTO (ADVERTENCIA - No detiene el envío) ===
-                // Si el campo de archivo no tiene archivos seleccionados
-                if (documentoField.files.length === 0) {
-                    warningMessage += '<p class="text-warning mb-0"><i class="bi bi-exclamation-triangle-fill me-2"></i> **Advertencia:** No se subió ningún documento. El justificante puede no ser válido.</p>';
-                    documentoField.classList.remove('is-invalid'); // No es un error de validación, sino una advertencia
-                }
-                
-                // === RESULTADO FINAL ===
-                if (isFormValid) {
-                    let successMessage = '<i class="bi bi-check-circle-fill text-success fs-4 me-2"></i> Datos del justificante actualizados con éxito.';
-                    
-                    if (warningMessage) {
-                         // Si hay advertencia, la añadimos al mensaje de éxito
-                         successMessage += warningMessage;
-                         showStatusModal(successMessage, true); 
-                    } else {
-                         // Solo mensaje de éxito
-                         showStatusModal(successMessage, true);
-                    }
-                    
-                    // Aquí iría el código para enviar los datos al servidor (AJAX/Fetch)
-                } else {
-                    // Si hay campos requeridos vacíos (incluyendo No. Control)
-                    showStatusModal(`<i class="bi bi-x-circle-fill text-danger fs-4 me-2"></i> Por favor, revisa y llena los ${emptyFieldsCount} campos marcados en rojo.`, false);
-                }
-            });
+            } else {
+                showStatusModal(`<i class="bi bi-x-circle-fill text-danger fs-4 me-2"></i> Por favor, revisa y llena los ${emptyFieldsCount} campos marcados en rojo.`);
+            }
         });
-    </script>
-</body>
-</html>
-
+    });
+</script>

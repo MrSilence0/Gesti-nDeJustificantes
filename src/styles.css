@@ -1,0 +1,36 @@
+:root {
+    --utng-dark-blue: #043c7b; /* Nuevo color azul oscuro solicitado */
+    --utng-teal: #3ABFBC; /* Teal/Aqua para los botones de acción */
+    --utng-purple: #8655c6; /* Púrpura */
+    --utng-green: #37b752; /* Verde Comunicación */
+    --utng-orange: #ff8c00; /* Naranja Transparencia */
+    --utng-red: #c63737; /* Rojo Responsabilidad */
+    --utng-pink: #f06292; /* Rosa Rendición de Cuentas */
+    --utng-yellow: #ffc107; /* Amarillo Honestidad */
+    --utng-blue-light: #37a8b7; /* Azul Paz */
+    --custom-text-color: #343a40; 
+    --utng-active-green: #00a896; /* Opción activa - Verde/Teal (Añadido) */
+    --utng-actualizar-btn: #4CAF50; /* Botón Actualizar (Verde) */
+    --utng-download-btn: #17a2b8; /* Botón Descargar (Cian/Info) */
+    --utng-light-gray: #f8f9fa; /* Fondo general */
+    --utng-error-red: #dc3545; /* Rojo de error */
+    --utng-form-send-btn: #5bc0de; /* Botón Enviar (Turquesa) */
+    --utng-form-clear-btn: #ffc107; /* Botón Limpiar (Amarillo) */
+    --utng-view-btn: #1e5fae;
+    --utng-send-btn: #ff9c33;
+    --utng-pending-header: #5bc0de; /* Azul de Pendientes (similar a bootstrap info) */
+    --utng-accepted-header: #5cb85c; /* Verde de Aceptadas (similar a bootstrap success) */
+    --utng-rejected-header: #d9534f; /* Rojo de Rechazadas (similar a bootstrap danger) */
+    --utng-ver-btn-pending: #2ecc71; /* Botón 'Ver solicitud' (verde claro) */
+    --utng-ver-btn-accepted: #1abc9c; /* Botón 'Ver' aceptadas (verde aqua) */
+    --utng-ver-btn-rejected: #3498db; /* Botón 'Ver' rechazadas (azul) */
+    --utng-search-btn: #17a2b8; /* Botón Buscar (Cian/Info) */
+    --utng-email-btn: #5bc0de; /* Botón Enviar Correo (Azul claro/Info) */
+}
+
+body {
+    background-color: #f8f9fa; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-top: 0px; 
+}
+

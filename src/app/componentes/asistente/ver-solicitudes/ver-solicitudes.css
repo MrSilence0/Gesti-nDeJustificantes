@@ -1,19 +1,9 @@
-:root {
-    --utng-dark-blue: #043c7b; /* Navbar principal */
-    --utng-purple: #7c4dff; /* Barra de Procesos */
-    --utng-active-green: #00a896; /* Opción activa - Verde/Teal */
-    --utng-pending-header: #5bc0de; /* Azul de Pendientes (similar a bootstrap info) */
-    --utng-accepted-header: #5cb85c; /* Verde de Aceptadas (similar a bootstrap success) */
-    --utng-rejected-header: #d9534f; /* Rojo de Rechazadas (similar a bootstrap danger) */
-    --utng-ver-btn-pending: #2ecc71; /* Botón 'Ver solicitud' (verde claro) */
-    --utng-ver-btn-accepted: #1abc9c; /* Botón 'Ver' aceptadas (verde aqua) */
-    --utng-ver-btn-rejected: #3498db; /* Botón 'Ver' rechazadas (azul) */
-    --utng-light-gray: #f8f9fa; /* Fondo general */
-}
+/*
+ * ==============================
+ * 1. Estilos Globales y Navegación
+ * ==============================
+ */
 
-body {
-    background-color: var(--utng-light-gray);
-}
 .custom-navbar-bg {
     background-color: var(--utng-dark-blue);
     padding-top: 5px;
@@ -21,13 +11,13 @@ body {
     z-index: 1030; 
 }
 
-.custom-user-icon {
+.custom-user-icon, .custom-notification-icon {
     color: white; 
     cursor: pointer;
 }
 
 .custom-main-content {
-    margin-top: 60px;
+    margin-top: 60px; /* Asegura espacio para la navbar fija */
     background-color: var(--utng-light-gray);
     padding: 0 !important;
 }
@@ -65,6 +55,12 @@ body {
     width: 100%;
 }
 
+/*
+ * ==============================
+ * 2. Estilos de Búsqueda y Filtros
+ * ==============================
+ */
+
 .custom-btn-search {
     background-color: var(--utng-active-green);
     border-color: var(--utng-active-green);
@@ -72,16 +68,29 @@ body {
     font-weight: 600;
 }
 .custom-btn-search:hover {
-    background-color: #008f7d;
+    background-color: #008f7d; /* Tono más oscuro de verde/azul */
     border-color: #008f7d;
     color: white;
 }
+
+/*
+ * ==============================
+ * 3. Estilos de Tarjetas de Estado
+ * ==============================
+ */
 
 .card-status {
     border-radius: 0.5rem;
     border: none;
 }
 
+.justificante-text {
+    font-size: 0.9rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+/* --- Pendientes (Amarillo/Naranja) --- */
 .custom-header-pending {
     background-color: var(--utng-pending-header) !important;
     border-color: var(--utng-pending-header) !important;
@@ -91,7 +100,7 @@ body {
     border-top-right-radius: calc(0.5rem - 1px);
 }
 .custom-btn-ver {
-    background-color: var(--utng-ver-btn-pending);
+    background-color: var(--utng-ver-btn-pending); /* Se asume un color para 'Ver solicitud' */
     border-color: var(--utng-ver-btn-pending);
     color: white;
     font-weight: 500;
@@ -100,11 +109,12 @@ body {
     white-space: nowrap;
 }
 .custom-btn-ver:hover {
-    background-color: #27ae60;
+    background-color: #27ae60; /* Color alternativo, podría ser mejor un tono de amarillo/naranja */
     border-color: #27ae60;
     color: white;
 }
 
+/* --- Aceptadas (Verde) --- */
 .custom-header-accepted {
     background-color: var(--utng-accepted-header) !important;
     border-color: var(--utng-accepted-header) !important;
@@ -113,7 +123,6 @@ body {
     border-top-left-radius: calc(0.5rem - 1px);
     border-top-right-radius: calc(0.5rem - 1px);
 }
-
 .custom-btn-aceptadas {
     background-color: var(--utng-ver-btn-accepted);
     border-color: var(--utng-ver-btn-accepted);
@@ -124,11 +133,12 @@ body {
     white-space: nowrap;
 }
 .custom-btn-aceptadas:hover {
-    background-color: #16a085;
+    background-color: #16a085; /* Tono más oscuro */
     border-color: #16a085;
     color: white;
 }
 
+/* --- Rechazadas (Rojo/Azul) --- */
 .custom-header-rejected {
     background-color: var(--utng-rejected-header) !important;
     border-color: var(--utng-rejected-header) !important;
@@ -137,7 +147,6 @@ body {
     border-top-left-radius: calc(0.5rem - 1px);
     border-top-right-radius: calc(0.5rem - 1px);
 }
-
 .custom-btn-rechazadas {
     background-color: var(--utng-ver-btn-rejected);
     border-color: var(--utng-ver-btn-rejected);
@@ -148,22 +157,26 @@ body {
     white-space: nowrap;
 }
 .custom-btn-rechazadas:hover {
-    background-color: #2980b9;
+    background-color: #2980b9; /* Tono más oscuro */
     border-color: #2980b9;
     color: white;
 }
 
-.justificante-text {
-    font-size: 0.9rem;
-    font-weight: 500;
-    line-height: 1.2;
-}
+/*
+ * ==============================
+ * 4. Estilos de Modal
+ * ==============================
+ */
 
 .custom-modal-header {
     background-color: var(--utng-dark-blue);
     color: white;
     border-bottom: 1px solid var(--utng-dark-blue);
 }
+.custom-modal-header .btn-close {
+    filter: invert(1); /* Hace que la X del modal sea blanca */
+}
+
 .custom-btn-cerrar {
     background-color: #6c757d;
     border-color: #6c757d;
